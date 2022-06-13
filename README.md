@@ -67,11 +67,12 @@ Some cool things that I have done in the last years which are totally free and r
 
 ### Apps, libraries and PoCs.
 
-- [Zabbix example environment](https://github.com/alvsanand/zabbix-example-environment): launch a example environment of the monitorization system called Zabbix for testing purposes using Vagrant. It would help you learn how to use Zabbix in your local computer.
-- [RNotes](https://github.com/alvsanand/rnotes): a simple notes service written in Rust that developed as a "graduation" project for my learning path to Rust language..
-- [Docker container for Forticlient](https://github.com/alvsanand/forticlient-vpn-docker): a ready to use Forticlient container in case you need to create a VPN connection but do not want to spend time installing libraries.
-- [Recommender System based on Apache Spark and Elasticsearch](https://github.com/alvsanand/spark_recommender): a just Proof of Concept (PoC) of how to create a Product Recommender using the latest Big Data technologies such as Apache Spark and Elasticsearch.
-- [Generic Connector for Apache Spark](https://github.com/alvsanand/spark-generic-connector): simplifies the connection of a external system with Apache Spark.
+[![spotify-downloader](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spotify-downloader)](https://github.com/alvsanand/spotify-downloader)
+[![zabbix-example-environment](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=zabbix-example-environment)](https://github.com/alvsanand/zabbix-example-environment)
+[![rnotes](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=rnotes)](https://github.com/alvsanand/rnotes)
+[![forticlient-vpn-docker](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=forticlient-vpn-docker)](https://github.com/alvsanand/forticlient-vpn-docker)
+[![spark_recommender](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark_recommender)](https://github.com/alvsanand/spark_recommender)
+[![spark-generic-connector](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark-generic-connector)](https://github.com/alvsanand/spark-generic-connector)
 
 ### Online Workshops
 
