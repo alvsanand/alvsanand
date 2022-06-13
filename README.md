@@ -61,11 +61,19 @@ During all my years working in IT, I have realized that it is not important what
  <a href="https://prestodb.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/prestodb/prestodb-ar21.svg" alt="presto" width="40" height="40"/> </a>
 </p>
 
-## Personal proyects
+## Personal projects
 
-Some cool things that I have done in the last years.
+Some cool things that I have done in the last years which are totally free and ready to be used.
 
-### Workshops
+### Apps, libraries and PoCs.
+
+- [Zabbix example environment](https://github.com/alvsanand/zabbix-example-environment): launch a example environment of the monitorization system called Zabbix for testing purposes using Vagrant. It would help you learn how to use Zabbix in your local computer.
+- [RNotes](https://github.com/alvsanand/rnotes): a simple notes service written in Rust that developed as a "graduation" project for my learning path to Rust language..
+- [Docker container for Forticlient](https://github.com/alvsanand/forticlient-vpn-docker): a ready to use Forticlient container in case you need to create a VPN connection but do not want to spend time installing libraries.
+- [Recommender System based on Apache Spark and Elasticsearch](https://github.com/alvsanand/spark_recommender): a just Proof of Concept (PoC) of how to create a Product Recommender using the latest Big Data technologies such as Apache Spark and Elasticsearch.
+- [Generic Connector for Apache Spark](https://github.com/alvsanand/spark-generic-connector): simplifies the connection of a external system with Apache Spark.
+
+### Online Workshops
 
 - [APIfy your infra with Crossplane](https://alvsanand.github.io/apify-your-infra-with-crossplane/)
 - [Chaos Engineering with Litmus](https://github.com/alvsanand/litmus-chaos-demo)
