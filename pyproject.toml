@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "alvsanand"
+version = "0.1.0"
+description = "Personal blog"
+authors = ["Alvaro Santos Andres <alvsanand@gmail.com>"]
+license = "Apache"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs-material = "^9.5.3"
+mkdocs-macros-plugin = "^1.0.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

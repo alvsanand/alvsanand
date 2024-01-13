@@ -1,0 +1,38 @@
+site_name: alvsanand.github.io
+site_url: https://alvsanand.github.io
+site_author: Alvaro Santos Andres
+site_description: >-
+  This is the personal blog of Alvaro Santos
+
+theme:
+  name: material
+  icon:
+    logo: material/library
+  palette:
+    primary: blue grey
+    scheme: slate
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.tabs
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+extra_css:
+  - assets/custom.css
+
+plugins:
+  - blog:
+      archive: false
+      categories_toc: false
+  - macros:
+      include_dir: .
+
+# Page tree
+nav:
+  - Home: index.md
+  - Blog:
+      - blog/index.md

@@ -3,11 +3,11 @@
 Cloud Solution Architect with more than 15 years of experience. In the last years I’ve led multiple projects into the public cloud and designed cloud migration strategies for several companies. I am also a professional AWS and GCP architect. 
 I am a true believer of Knowledge and I consider learning a key piece of humanity. Therefore, I have spent the last years sharing my modest knowledge of technology participating in summits, creating technical articles or liberating open-source contents to the community. Very Passionate about technology, knowledge communication, sports and traveling. Interested in Cloud Native Technologies, Solutions Architecting, Cloud Adoption and Digital Transformation.
 
-- 🔭 I’m currently working on **Santander Bank as Cloud Solution Arhichitect**
+- 🔭 I’m currently working on [**Syngenta**](https://www.linkedin.com/company/syngenta) as **Cloud Solution Arhichitect**
 
 - 📫 How to reach me:
-  - **[alvsanand@gmail.com](mailto:alvsanand@gmail.com)**
-  - <a href="https://linkedin.com/in/alvsanand" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alvsanand" height="15" width="15" /></a>
+    - **[alvsanand@gmail.com](mailto:alvsanand@gmail.com)**
+    - <a href="https://linkedin.com/in/alvsanand" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alvsanand" height="15" width="15" /> LinkedIn</a>
 
 
 ## What I now?
@@ -65,24 +65,9 @@ During all my years working in IT, I have realized that it is not important what
 
 Some cool things that I have done in the last years which are totally free and ready to be used.
 
-### Apps, libraries and PoCs.
-
-[![spotify-downloader](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spotify-downloader)](https://github.com/alvsanand/spotify-downloader)
-[![zabbix-example-environment](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=zabbix-example-environment)](https://github.com/alvsanand/zabbix-example-environment)
-[![rnotes](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=rnotes)](https://github.com/alvsanand/rnotes)
-[![forticlient-vpn-docker](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=forticlient-vpn-docker)](https://github.com/alvsanand/forticlient-vpn-docker)
-[![spark_recommender](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark_recommender)](https://github.com/alvsanand/spark_recommender)
-[![spark-generic-connector](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark-generic-connector)](https://github.com/alvsanand/spark-generic-connector)
-
-### Online Workshops
-
-- [APIfy your infra with Crossplane](https://alvsanand.github.io/apify-your-infra-with-crossplane/)
-- [Chaos Engineering with Litmus](https://github.com/alvsanand/litmus-chaos-demo)
-- [Distributed Tracing](https://alvsanand.github.io/distributed-tracing-workshop/)
-- [Istio Tracing workshop](https://alvsanand.github.io/istio-workshop/)
-
 ### Talks
 
+- [From Farm to Cloud: Using DevOps to Optimise Agriculture Operations - 2023](https://www.youtube.com/watch?v=C3TOVasUfDo)
 - [Let nothing escape you from Kubernetes - DevOps and Cloud Days - 2022](https://devopsandclouddays.com)
 - [Building a Datalake for everyone - DevOps and Cloud Days - 2021](https://devopsandclouddays.com)
 - [10 Tips to Fail at Cloud - Nova Project - 2020](https://bluetab.net)
@@ -99,6 +84,22 @@ Some cool things that I have done in the last years which are totally free and r
 - [Basic AWS Glue concepts](https://bluetab.net/en/bluetab/)
 - [Creating a Recommender System (Part I)](https://blog.stratio.com/creating-a-recommender-system-part-i/)
 - [Creating a Recommender System (Part II)](https://blog.stratio.com/creating-recommender-system-part-two/)
+
+### Apps, libraries and PoCs.
+
+[![spotify-downloader](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spotify-downloader)](https://github.com/alvsanand/spotify-downloader)
+[![zabbix-example-environment](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=zabbix-example-environment)](https://github.com/alvsanand/zabbix-example-environment)
+[![rnotes](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=rnotes)](https://github.com/alvsanand/rnotes)
+[![forticlient-vpn-docker](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=forticlient-vpn-docker)](https://github.com/alvsanand/forticlient-vpn-docker)
+[![spark_recommender](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark_recommender)](https://github.com/alvsanand/spark_recommender)
+[![spark-generic-connector](https://github-readme-stats.vercel.app/api/pin/?username=alvsanand&repo=spark-generic-connector)](https://github.com/alvsanand/spark-generic-connector)
+
+### Online Workshops
+
+- [APIfy your infra with Crossplane](https://alvsanand.github.io/apify-your-infra-with-crossplane/)
+- [Chaos Engineering with Litmus](https://github.com/alvsanand/litmus-chaos-demo)
+- [Distributed Tracing](https://alvsanand.github.io/distributed-tracing-workshop/)
+- [Istio Tracing workshop](https://alvsanand.github.io/istio-workshop/)
 
 <br/>
 
