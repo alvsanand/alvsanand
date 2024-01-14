@@ -6,7 +6,7 @@ categories:
 ---
 # Embracing the Challenge
 
-![Embracing the Challenge](/img/embracing_the_challenge.jpg){ width="30%" align=left }
+![Embracing the Challenge](/img/embracing_the_challenge.jpg){ width="35%" align=left }
 
 With over 15 years as a **software engineer**, my journey has been a rollercoaster of jobs across various companies and teams — some great, some not so much. One revelation that I had is **how fast the technology evolves**. In just a few short years, your tech portfolio can become outdated, a relic of a bygone era. Although I've never considered myself a genius, what I do possess is an **unwavering determination and consistency**. Identifying my weaknesses has been key, whether in personal growth or, in this context, keeping up to date. 
 
@@ -25,6 +25,8 @@ And speaking of learning, here are some effective ways to do it:
 - **Certifications Matter:** Pursue certifications that are in high demand. It's a challenging journey but adds valuable personal experience.
 - **Dive into New Projects:** Participate in open-source initiatives or start your projects for a more hands-on learning experience.
 
-As we step into 2024, I feel the need to take on something distinct, personal, and significant — an activity that propels me far beyond my comfort zone. Hence, I would like to start a new project called [**Datahub.local**](https://alvsanand.github.io/datahub-local/). In the following months, I would like to desing and develop my own data platform designed for edge devices, enabling seamless analytics and insights that you can run at home. More details in future articles.
+As we step into 2024, I feel the need to take on something distinct, personal, and significant — an activity that propels me far beyond my comfort zone. Hence, I would like to start a new project called [**Datahub.local**](https://alvsanand.github.io/datahub-local/). In the following months, I would like to design, develop and mantain my own data platform specific for edge devices, enabling seamless analytics and insights that you can run at home. More details in future articles.
+
+![reinvention](/img/reinvention.png){ width="40%" }
 
 So, buckle up, because my new journey of **reinvention has just begun**.
