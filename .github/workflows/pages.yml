@@ -29,11 +29,10 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh/ \
-            && echo "${SSH_DEPLOY_KEY}" > ~/.ssh/id_rsa.pub \
-            && chmod 400 ~/.ssh/id_rsa.pub
+            && echo "${SSH_DEPLOY_KEY}" > ~/.ssh/id_rsa \
+            && chmod 400 ~/.ssh/id_rsa
 
           git remote add alvsanand.github.io git@github.com:alvsanand/alvsanand.github.io.git
 
-          export GIT_SSH_COMMAND="ssh -vvv" 
           git push alvsanand.github.io main:main
           git push alvsanand.github.io gh-pages:gh-pages
