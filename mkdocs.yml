@@ -22,6 +22,8 @@ extra_css:
   - assets/custom.css
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - toc:
       toc_depth: 0
 
@@ -31,6 +33,7 @@ plugins:
       categories_toc: false
   - macros:
       include_dir: .
+  - glightbox
 
 # Page tree
 nav:

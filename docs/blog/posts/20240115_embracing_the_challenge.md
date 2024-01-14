@@ -6,13 +6,13 @@ categories:
 ---
 # Embracing the Challenge
 
+![Embracing the Challenge](/img/embracing_the_challenge.jpg){ width="30%" align=left }
+
 With over 15 years as a software engineer, my journey has been a rollercoaster of jobs across various companies and teams — some great, some not so much. Such is life. And truth be told, I relish every bit of it.
 
 One revelation that I have had all these years is how fast the technology evolves. In just a few short years, your tech portfolio can become outdated, a relic of a bygone era. I've never considered myself a genius, but what I do possess is an unwavering determination and consistency. Identifying my weaknesses has been key, whether in personal growth or, in this context, keeping up with the rapidly changing tech landscape.
 
 In the world of IT, change is the only constant. You must reinvent yourself, especially from a technological standpoint, and the magic happens when you step out of your comfort zone.
-
-<!-- more -->
 
 Here's a concise list of what I find crucial for staying up-to-date:
 
