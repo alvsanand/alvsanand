@@ -26,6 +26,8 @@ jobs:
       - run: poetry run mkdocs gh-deploy --force
       - name: Deploy to external repository
         uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: .
           target-directory: .
