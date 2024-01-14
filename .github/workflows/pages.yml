@@ -28,7 +28,9 @@ jobs:
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         run: |
-          echo "${SSH_DEPLOY_KEY}" > ~/.ssh/id_rsa.pub
+          mkdir -p ~/.ssh/ \
+            && echo "${SSH_DEPLOY_KEY}" > ~/.ssh/id_rsa.pub \
+            && chmod 400 ~/.ssh/id_rsa.pub 
 
           git remote add alvsanand.github.io git@github.com:alvsanand/alvsanand.github.io.git
 
