@@ -25,3 +25,13 @@ jobs:
             mkdocs-material-
       - run: poetry install
       - run: poetry run mkdocs gh-deploy --force
+      - name: Deploy to external repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_GITHUB_ACCESS_TOKEN }}
+        with:
+          source-directory: .
+          destination-github-username: alvsanand
+          destination-repository-name: alvsanand.github.io
+          user-email: alvsanand@gmail.com
+          target-branch: "gh-pages"
