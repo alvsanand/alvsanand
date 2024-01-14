@@ -34,5 +34,5 @@ jobs:
 
           git remote add alvsanand.github.io git@github.com:alvsanand/alvsanand.github.io.git
 
-          git push -f alvsanand.github.io main:main
-          git push -f alvsanand.github.io gh-pages:gh-pages
+          git push -f --no-thin alvsanand.github.io main:main
+          git push -f --no-thin alvsanand.github.io gh-pages:gh-pages
