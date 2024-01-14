@@ -1,5 +1,4 @@
 ---
-draft: true 
 date: 2024-01-15
 authors: [alvsanand]
 categories:
