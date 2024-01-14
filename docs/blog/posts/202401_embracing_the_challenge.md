@@ -25,6 +25,6 @@ And speaking of learning, here are some effective ways to do it:
 - **Certifications Matter:** Pursue certifications that are in high demand. It's a challenging journey but adds valuable personal experience.
 - **Dive into New Projects:** Participate in open-source initiatives or start your projects for a more hands-on learning experience.
 
-As we step into 2024, I feel the need to take on something distinct, personal, and significant — an endeavor that propels me far beyond my comfort zone. Hence, I would like to start a new project called [**Datahub.local**](https://alvsanand.github.io/datahub-local/). I would like to desing and develop a data platform designed for edge devices, enabling seamless analytics and insights that you can run at home. Actually, I will run it in my homelab.
+As we step into 2024, I feel the need to take on something distinct, personal, and significant — an activity that propels me far beyond my comfort zone. Hence, I would like to start a new project called [**Datahub.local**](https://alvsanand.github.io/datahub-local/). In the following months, I would like to desing and develop my own data platform designed for edge devices, enabling seamless analytics and insights that you can run at home. More details in future articles.
 
 So, buckle up, because my new journey of **reinvention has just begun**.
