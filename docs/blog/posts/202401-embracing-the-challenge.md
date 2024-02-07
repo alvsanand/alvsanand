@@ -7,7 +7,7 @@ categories:
 ---
 # Embracing the Challenge
 
-![Embracing the Challenge](/img/embracing_the_challenge.jpg){ width="35%" align=left }
+![Embracing the Challenge](/img/embracing-the-challenge.jpg){ width="35%" align=left }
 
 With over 15 years as a **software engineer**, my journey has been a rollercoaster of jobs across various companies and teams — some great, some not so much. One revelation that I had is **how fast the technology evolves**. In just a few short years, your tech portfolio can become outdated, a relic of a bygone era. Although I've never considered myself a genius, what I do possess is an **unwavering determination and consistency**. Identifying my weaknesses has been key, whether in personal growth or, in this context, keeping up to date. 
 

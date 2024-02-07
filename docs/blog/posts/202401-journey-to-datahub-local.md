@@ -7,7 +7,7 @@ categories:
 ---
 # Journey to Datahub.local
 
-Hey there! If my previous post, [Embracing the Challenge](202401_embracing_the_challenge.md), you know I’m on a mission in 2024. The quest? Crafting my own Data Platform from scratch called [Datahub.local](https://www.alvsanand.com/datahub-local/). It’s not just about data – it’s about diving headfirst into the unknown, learning, experimenting, and enjoying the ride. In this article, we're going to map out the game plan for this adventure.
+Hey there! If my previous post, [Embracing the Challenge](202401_embracing-the-challenge.md), you know I’m on a mission in 2024. The quest? Crafting my own Data Platform from scratch called [Datahub.local](https://www.alvsanand.com/datahub-local/). It’s not just about data – it’s about diving headfirst into the unknown, learning, experimenting, and enjoying the ride. In this article, we're going to map out the game plan for this adventure.
 
 ![ Journey to Datahub.local](/img/datahub-local-plan.png)
 
