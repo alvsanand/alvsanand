@@ -8,7 +8,7 @@ categories:
 ---
 # Homelab For Begineers
 
-Another week, another post about [Datahub.local](https://www.alvsanand.com/datahub-local/). [Last time](202401-journey-to-datahub-local.md) we saw how I plan to run this project, including goal, steps and some rules. This time I would like to introduce you to the worlf of **Homelabs** or **Home Labs**.
+Another week brings with it a new update on [Datahub.local](https://www.alvsanand.com/datahub-local/). In our previous post [Journey to Datahub.local](202401-journey-to-datahub-local.md), we saw a general overview of how I plan to execute this project with details about goals, steps and some rules. This time, we're delving into the realm of **Homelabs** or **Home Labs**.
 
 !!! note
 
@@ -16,9 +16,11 @@ Another week, another post about [Datahub.local](https://www.alvsanand.com/datah
 
 ## What is a Homelab?
 
-If the word **Homelab** is as foreign to you as a penguin in the desert, let me break it down for you. A Homelab is like having your own little tech playground at home – a server or a bunch of them where you can host any kind of applications and services.
+![Homelab](/img/homelab.jpg){ width="50%" }
 
-Furthermore, a **Homelab** is a dedicated space where IT enthusiasts and professionals can experiment with various hardware and software configurations in a controlled environment. It's essentially a mini data center at home, providing a hands-on experience for learning, testing, and skill development.
+If *Homelab* is as foreign word to you as a penguin in the desert, let me break it down for you. A Homelab is like having your own little tech playground at home – a server or a bunch of them where you can host any kind of applications and services.
+
+Furthermore, a *Homelab* is a dedicated space where IT enthusiasts and professionals can experiment with various hardware and software configurations in a controlled environment. It's essentially a mini data center at home, providing a hands-on experience for learning, testing, and skill development.
 
 ## Why do you need a homelab?
 
@@ -109,7 +111,11 @@ Using tools for organizing the rest of components is essential to have an effici
 
 ## Cool Ideas for Your Homelab
 
+
+![Apps](/img/apps.png)
+
 Now that you have your Homelab set up, the possibilities are endless for exciting projects and experiments. Here are some cool ideas to spark your creativity:
+
 
 - **Home Automation Hub**: Transform your Homelab into a central hub for home automation. Use platforms like Home Assistant or OpenHAB to control smart devices, set up routines, and experiment with IoT (Internet of Things) integrations.
 - **Media Server**: Create a media server to centralize your music, movies, and TV shows. Platforms like Plex or Jellyfin allow you to organize and stream your media collection to various devices within your home network.
@@ -123,7 +129,7 @@ Now that you have your Homelab set up, the possibilities are endless for excitin
 
 ## Tips to Create a Low-cost Homelab
 
-Establishing a Homelab doesn't necessarily require a hefty budget. Consider the following cost-effective suggestions:
+Finally, I'll be sharing some tips for assembling your own Homelab without breaking the bank. Keep in mind that building a functional Homelab doesn't have to strain your finances. Here are some frugal tips to consider:
 
 - **Reuse Old Hardware**: Give a new purpose to old computers and laptops by transforming them into servers or testing machines.
 - **Buy Microcontrollers**: buy budget devices like Raspberry Pi, which not only come at a lower cost but can also serve for running small applications.
@@ -135,4 +141,4 @@ Establishing a Homelab doesn't necessarily require a hefty budget. Consider the 
 
 In summary, a Homelab proves to be a flexible resource for IT enthusiasts of all expertise levels. Whether you're a novice eager to delve into fundamentals or a seasoned professional aiming to stay abreast of cutting-edge technologies, a Homelab offers a dynamic and adaptable learning space. Begin modestly, and witness your Homelab expand in tandem with your IT proficiency.
 
-Keep in mind that the crucial aspect is aligning your Homelab projects with your specific interests and objectives. Ensure it remains enjoyable and brings a sense of delight to your learning journey.
+Keep in mind that the crucial aspect is aligning your Homelab projects with your specific interests and objectives. Ensure it remains **fun** and ***enjoyable** bringing a sense of delight to your **learning journey**.
