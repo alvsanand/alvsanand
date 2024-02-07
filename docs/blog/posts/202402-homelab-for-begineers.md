@@ -141,4 +141,4 @@ Finally, I'll be sharing some tips for assembling your own Homelab without break
 
 In summary, a Homelab proves to be a flexible resource for IT enthusiasts of all expertise levels. Whether you're a novice eager to delve into fundamentals or a seasoned professional aiming to stay abreast of cutting-edge technologies, a Homelab offers a dynamic and adaptable learning space. Begin modestly, and witness your Homelab expand in tandem with your IT proficiency.
 
-Keep in mind that the crucial aspect is aligning your Homelab projects with your specific interests and objectives. Ensure it remains **fun** and ***enjoyable** bringing a sense of delight to your **learning journey**.
+Keep in mind that the crucial aspect is aligning your Homelab projects with your specific interests and objectives. Just make it **fun** and **enjoyable** so your **learning journey** will be a great success.
