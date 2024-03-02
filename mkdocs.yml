@@ -45,9 +45,6 @@ plugins:
   - macros:
       include_dir: .
   - glightbox
-  - redirects:
-      redirect_maps:
-        "datahub-local.md": "https://alvsanand.github.io/datahub-local/"
 
 # Page tree
 nav:
