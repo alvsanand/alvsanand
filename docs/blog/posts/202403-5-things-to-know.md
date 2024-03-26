@@ -2,7 +2,6 @@
 date: 2024-03-02
 authors: [alvsanand]
 categories:
-  - General
   - Hardware
   - Datahub.local
 ---

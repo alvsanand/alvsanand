@@ -4,6 +4,7 @@ authors: [alvsanand]
 categories:
   - General
   - Datahub.local
+  - Learning
 ---
 # Embracing the Challenge
 
