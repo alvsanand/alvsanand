@@ -1,12 +1,12 @@
 {
   "type": "excalidraw",
   "version": 2,
-  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "source": "https://excalidraw.com",
   "elements": [
     {
       "type": "rectangle",
-      "version": 742,
-      "versionNonce": 1639875328,
+      "version": 758,
+      "versionNonce": 367385912,
       "isDeleted": false,
       "id": "OTGH4j2TjCvWHsE1-Go7P",
       "fillStyle": "solid",
@@ -20,20 +20,20 @@
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 820.5421776519862,
-      "height": 654.6595534475307,
+      "height": 568.6595534475307,
       "seed": 90983680,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711381059471,
+      "updated": 1711962091177,
       "link": null,
       "locked": false
     },
     {
       "type": "text",
       "version": 762,
-      "versionNonce": 98058021,
+      "versionNonce": 1198313272,
       "isDeleted": false,
       "id": "BCwwiM-iRYsRWBgcdOQKQ",
       "fillStyle": "solid",
@@ -53,7 +53,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102102,
+      "updated": 1711962085050,
       "link": null,
       "locked": false,
       "fontSize": 60.31999511718745,
@@ -63,8 +63,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Kubernetes To-Do List",
-      "lineHeight": 1.25,
-      "baseline": 53
+      "lineHeight": 1.25
     },
     {
       "type": "rectangle",
@@ -98,7 +97,7 @@
     {
       "type": "text",
       "version": 913,
-      "versionNonce": 304771499,
+      "versionNonce": 1307893832,
       "isDeleted": false,
       "id": "xCKBvoNtIGoq62f8IaiIX",
       "fillStyle": "solid",
@@ -120,7 +119,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102103,
+      "updated": 1711962085050,
       "link": null,
       "locked": false,
       "fontSize": 24.692834592694872,
@@ -130,8 +129,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Certificate Management",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 22
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "rectangle",
@@ -164,8 +162,8 @@
     },
     {
       "type": "text",
-      "version": 731,
-      "versionNonce": 1362039429,
+      "version": 732,
+      "versionNonce": 49213593,
       "isDeleted": false,
       "id": "gupgPESbzArMKwXf8BZ1k",
       "fillStyle": "solid",
@@ -178,7 +176,7 @@
       "y": 79.79995727539062,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 386.7694091796875,
+      "width": 385.0312805175781,
       "height": 31.184554730494547,
       "seed": 1261904640,
       "groupIds": [
@@ -187,18 +185,17 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102104,
+      "updated": 1711962112609,
       "link": null,
       "locked": false,
       "fontSize": 23.815899117996874,
       "fontFamily": 1,
-      "text": "Kubernetes Distribution Selection",
+      "text": "Select a Kubernetes Distribution",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Kubernetes Distribution Selection",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 21
+      "originalText": "Select a Kubernetes Distribution",
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "line",
@@ -280,7 +277,7 @@
     {
       "type": "text",
       "version": 1101,
-      "versionNonce": 1793393739,
+      "versionNonce": 201430856,
       "isDeleted": false,
       "id": "zxrGhiNCqt7x8iogjCX5s",
       "fillStyle": "solid",
@@ -302,7 +299,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102105,
+      "updated": 1711962085050,
       "link": null,
       "locked": false,
       "fontSize": 24.692834592694872,
@@ -312,8 +309,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Securing External Services",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 22
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "rectangle",
@@ -347,7 +343,7 @@
     {
       "type": "text",
       "version": 823,
-      "versionNonce": 1695840741,
+      "versionNonce": 1610375480,
       "isDeleted": false,
       "id": "lfVEDcRJO90fe02sGRZBg",
       "fillStyle": "solid",
@@ -369,7 +365,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102106,
+      "updated": 1711962085050,
       "link": null,
       "locked": false,
       "fontSize": 23.815899117996874,
@@ -379,8 +375,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Storage and Backup Strategy",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 21
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "line",
@@ -461,8 +456,8 @@
     },
     {
       "type": "text",
-      "version": 887,
-      "versionNonce": 2146714347,
+      "version": 900,
+      "versionNonce": 1094415223,
       "isDeleted": false,
       "id": "r2BQrCo6U6H1Mg3yeoFDT",
       "fillStyle": "solid",
@@ -475,7 +470,7 @@
       "y": 322.0947562669237,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 268.40997314453125,
+      "width": 192.47991943359375,
       "height": 31.184554730494547,
       "seed": 1174217472,
       "groupIds": [
@@ -484,18 +479,17 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102106,
+      "updated": 1711962144647,
       "link": null,
       "locked": false,
       "fontSize": 23.815899117996874,
       "fontFamily": 1,
-      "text": "Secure Secret Storage",
+      "text": "Securing Secrets",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Secure Secret Storage",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 21
+      "originalText": "Securing Secrets",
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "line",
@@ -577,7 +571,7 @@
     {
       "type": "text",
       "version": 929,
-      "versionNonce": 1519777093,
+      "versionNonce": 625703480,
       "isDeleted": false,
       "id": "6CZwWvxc703NG2L8w3Vq-",
       "fillStyle": "solid",
@@ -599,7 +593,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102107,
+      "updated": 1711962085050,
       "link": null,
       "locked": false,
       "fontSize": 24.692834592694872,
@@ -609,8 +603,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Deployment Automation with GitOps CD Tool",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 22
+      "lineHeight": 1.3094006896816852
     },
     {
       "type": "rectangle",
@@ -643,8 +636,8 @@
     },
     {
       "type": "text",
-      "version": 976,
-      "versionNonce": 971156875,
+      "version": 978,
+      "versionNonce": 1866708025,
       "isDeleted": false,
       "id": "B6S2SBhlEBuyRuC0omFWr",
       "fillStyle": "solid",
@@ -657,7 +650,7 @@
       "y": 443.2421557626902,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 608.015625,
+      "width": 418.7668762207031,
       "height": 32.33281464587044,
       "seed": 1682400000,
       "groupIds": [
@@ -666,85 +659,17 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711382102108,
+      "updated": 1711962096031,
       "link": null,
       "locked": false,
       "fontSize": 24.692834592694872,
       "fontFamily": 1,
-      "text": "Monitoring and Observability Stack Implementation",
+      "text": "Monitoring and Observability Stack",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Monitoring and Observability Stack Implementation",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 22
-    },
-    {
-      "type": "rectangle",
-      "version": 748,
-      "versionNonce": 1965531904,
-      "isDeleted": false,
-      "id": "ThEz1wg11JnSmMUUEktoX",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "angle": 0,
-      "x": 531.0719417688131,
-      "y": 508.6453012768651,
-      "strokeColor": "#000000",
-      "backgroundColor": "transparent",
-      "width": 25.579099940798717,
-      "height": 25.579099940798717,
-      "seed": 500179712,
-      "groupIds": [
-        "Baxya2Jw5Y9VW9jIS2qSB"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "boundElements": [],
-      "updated": 1711381030713,
-      "link": null,
-      "locked": false
-    },
-    {
-      "type": "text",
-      "version": 995,
-      "versionNonce": 1292960933,
-      "isDeleted": false,
-      "id": "2Ve41dWbB_T7D-ECHSO8S",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "angle": 0,
-      "x": 571.5703594639597,
-      "y": 504.3899854682614,
-      "strokeColor": "#000000",
-      "backgroundColor": "transparent",
-      "width": 265.8617858886719,
-      "height": 32.33281464587044,
-      "seed": 1439941376,
-      "groupIds": [
-        "Baxya2Jw5Y9VW9jIS2qSB"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "boundElements": [],
-      "updated": 1711382102108,
-      "link": null,
-      "locked": false,
-      "fontSize": 24.692834592694872,
-      "fontFamily": 1,
-      "text": "Resource Optimization",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "Resource Optimization",
-      "lineHeight": 1.3094006896816852,
-      "baseline": 22
+      "originalText": "Monitoring and Observability Stack",
+      "lineHeight": 1.3094006896816852
     }
   ],
   "appState": {
