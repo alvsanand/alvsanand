@@ -1,19 +1,10 @@
 ---
-
-## date
-
-2024-04-02
-
-## authors
-
-[alvsanand]
+date: 2024-04-02
+authors: [alvsanand]
 categories:
   - DevOps
   - Datahub.local
-
-## draft
-
-true
+draft: true
 ---
 # Yet Another Kubernetes To-Do List
 
@@ -21,7 +12,7 @@ Ever noticed how easy it is to kickstart your app on Kubernetes locally? Just a 
 
 Take my [Datahub.local](https://datahub-local.alvsanand.com/) project, for example. It's not just a data platform; it's a whole ecosystem of things running on Kubernetes. I've also got monitoring, storage solutions, CI/CD pipelines and many more. So suddenly, The initial simplicity feels like a distant dream.
 
-![Kubernetes To-Do List](/img/kubernetes-to-do-list.jpg){ width="35%" align=left }
+![Kubernetes To-Do List](/img/kubernetes-to-do-list.png){ width="80%" }
 
 ## 1. Select a Kubernetes Distribution
 
