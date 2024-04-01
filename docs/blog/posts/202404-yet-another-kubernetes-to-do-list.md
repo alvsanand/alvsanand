@@ -4,7 +4,6 @@ authors: [alvsanand]
 categories:
   - DevOps
   - Datahub.local
-draft: true
 ---
 # Yet Another Kubernetes To-Do List
 
