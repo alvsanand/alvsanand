@@ -17,7 +17,7 @@ However, in my Homelab \([Datahub.local](https://github.com/datahub-local)\), I 
 
 ### The Challenge: It's Not Just One Version
 
-![CNPG Upgrade Infographic](/img/homelab.jpg){ width="50%" }
+![CNPG Upgrade Infographic](/img/cnpg-upgrade-info.png){ width="50%" }
 
 Before diving into the "how," it's important to understand that with CloudNativePG, you aren't just managing one version. You are juggling two:
 1.  **The PostgreSQL Version**
@@ -26,15 +26,17 @@ Before diving into the "how," it's important to understand that with CloudNative
 Both have different End-of-Life (EOL) dates that you need to watch out for.
 
 **PostgreSQL EOLs:**
+
 | Version | Release Date | EOL        |
-|:--------|:-------------|:-----------|
+|---------|--------------|------------|
 | 18      | 2025-09-25   | 2030-11-14 |
 | 17      | 2024-09-26   | 2029-11-08 |
 | 16      | 2023-09-14   | 2028-11-09 |
 
 **Debian OS EOLs:**
+
 | Name                 | Status     | EOL        |
-|:---------------------|:-----------|:-----------|
+|----------------------|------------|------------|
 | Trixie (stable)      | Supported  | 2030-06-30 |
 | Bookworm (oldstable) | Supported  | 2028-06-30 |
 | Bullseye             | Deprecated | 2026-08-31 |
