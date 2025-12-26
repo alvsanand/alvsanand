@@ -1,0 +1,937 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is the personal blog of Alvaro Santos">
+      
+      
+        <meta name="author" content="Alvaro Santos Andres">
+      
+      
+        <link rel="canonical" href="https://alvsanand.com/blog/category/devops/">
+      
+      
+        <link rel="prev" href="../datahublocal/">
+      
+      
+        <link rel="next" href="../general/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>DevOps - alvsanand.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="alvsanand.com" class="md-header__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            alvsanand.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DevOps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="alvsanand.com" class="md-nav__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    alvsanand.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../datahublocal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datahub.local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="devops">DevOps</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-12-26 00:00:00+00:00">December 26, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">DevOps</a>, 
+              <a href="../datahublocal/" class="md-meta__link">Datahub.local</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/">Migrating PostgreSQL in Kubernetes: A Homelab Christmas Adventure</a></h2>
+<h3 id="introduction"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#introduction">Introduction</a></h3>
+<p>In a Production environment, upgrading databases is arguably one of the most critical and nerve-wracking tasks a DevOps or SRE team has to face. We all know someone (or <em>are</em> someone) who has a war story about a "simple" upgrade turning into a lost weekend spent recovering data.</p>
+<p>In the era of Kubernetes, this pressure is compounded because the release velocity is so fast; you're often looking at a major version upgrade every 1 to 1.5 years. That is exactly why, in every company I’ve worked for, I always suggest using <strong>DB as a Service</strong> (like AWS RDS). Offload that pain to the cloud provider so you can sleep at night.</p>
+<p>However, in my Homelab (<a href="https://github.com/datahub-local">Datahub.local</a>), I don't have that luxury (and the budget!). So, this holiday season, it was finally time to bite the bullet and upgrade my PostgreSQL cluster running on <strong>CloudNativePG (CNPG)</strong>.</p>
+<h3 id="the-challenge-its-not-just-one-version"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#the-challenge-its-not-just-one-version">The Challenge: It's Not Just One Version</a></h3>
+<p><img alt="CNPG Upgrade Infographic" src="/img/cnpg-upgrade-info.png" width="50%"></p>
+<p>Before diving into the "how," it's important to understand that with CloudNativePG, you aren't just managing one version. You are juggling two:
+1.  <strong>The PostgreSQL Version</strong>
+2.  <strong>The OS Version</strong> of the container image (usually Debian based)</p>
+<p>Both have different End-of-Life (EOL) dates that you need to watch out for.</p>
+<p><strong>PostgreSQL EOLs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Release Date</th>
+<th>EOL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>2025-09-25</td>
+<td>2030-11-14</td>
+</tr>
+<tr>
+<td>17</td>
+<td>2024-09-26</td>
+<td>2029-11-08</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2023-09-14</td>
+<td>2028-11-09</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Debian OS EOLs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>EOL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trixie (stable)</td>
+<td>Supported</td>
+<td>2030-06-30</td>
+</tr>
+<tr>
+<td>Bookworm (oldstable)</td>
+<td>Supported</td>
+<td>2028-06-30</td>
+</tr>
+<tr>
+<td>Bullseye</td>
+<td>Deprecated</td>
+<td>2026-08-31</td>
+</tr>
+</tbody>
+</table>
+<p>Depending on what you need to upgrade, the difficulty level changes exponentially.</p>
+<p>More info on that can be found in the <a href="https://cloudnative-pg.io/docs/1.28/database_import#the-monolith-type">CNPG PostgreSQL Container Images</a>.</p>
+<h3 id="rolling-update-level-easy-postgres-only"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#rolling-update-level-easy-postgres-only">Rolling Update: Level Easy (Postgres Only)</a></h3>
+<p>If you stick to the same OS, upgrading Postgres is trivial. You can go from Postgres 16 to 17 just by changing the image tag.</p>
+<p><strong>Rolling Update</strong> means CNPG gradually replaces one pod at a time while maintaining the cluster's availability—no downtime, no data movement needed.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql.cnpg.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cluster</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg-cluster</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Changing from 16 to 17 on the same OS (Bookworm)</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/cloudnative-pg/postgresql:17-system-bookworm</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">instances</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">storage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
+</code></pre></div>
+<h3 id="blue-green-update-level-advanced-postgres-os"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#blue-green-update-level-advanced-postgres-os">Blue-Green Update: Level Advanced (Postgres + OS)</a></h3>
+<p>This is where I found myself. I wanted to move from <strong>Postgres 16 on Bookworm</strong> to <strong>Postgres 17 on Trixie</strong>.</p>
+<p>Here's the catch: <strong>You cannot do a direct rolling upgrade if the underlying OS changes.</strong> The glibc versions or other system libraries might differ, making the data directory incompatible or risky to upgrade in place.</p>
+<p><strong>Blue-Green Update</strong> is the solution—you deploy an entirely new cluster alongside the old one, migrate data, then switch traffic over. This approach is safer when OS components differ, and it gives you a quick rollback option if issues arise.</p>
+<h3 id="my-migration-strategy"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#my-migration-strategy">My Migration Strategy</a></h3>
+<p>Since I wanted the latest and greatest (and to reset the clock on those EOL dates), I opted for the advanced path. Here is the workflow I used to migrate with zero downtime for my apps.</p>
+<h4 id="step-1-the-abstraction-layer"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#step-1-the-abstraction-layer">Step 1: The Abstraction Layer</a></h4>
+<p>First, I created a Kubernetes Service of type <code>ExternalName</code>. This acts as a pointer. I configured all my applications to talk to this Service (<code>pg-cluster-entrypoint</code>) instead of the actual CNPG service name.</p>
+<p>This is crucial because it decouples the "address" my apps use from the actual cluster running behind the scenes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"pg-cluster-entrypoint"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalName</span>
+<span class="w">  </span><span class="c1"># Pointing to the CURRENT Postgres 16 cluster</span>
+<span class="w">  </span><span class="nt">externalName</span><span class="p">:</span><span class="w"> </span><span class="s">'pg-cluster-rw.postgres.svc.cluster.local'</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</code></pre></div>
+<h4 id="step-2-the-new-cluster"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#step-2-the-new-cluster">Step 2: The New Cluster</a></h4>
+<p>Next, I spun up a completely new cluster running <strong>Postgres 17 on Trixie</strong>. I used the <code>bootstrap.initdb.import</code> feature to pull data directly from the old cluster. More info on that can be found in the <a href="https://cloudnative-pg.io/docs/1.28/database_import#the-monolith-type">CloudNativePG docs</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql.cnpg.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cluster</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg-cluster-17</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/cloudnative-pg/postgresql:17-system-trixie</span>
+<span class="w">  </span><span class="nt">instances</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">bootstrap</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">initdb</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">import</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monolith</span>
+<span class="w">        </span><span class="nt">databases</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"*"</span>
+<span class="w">        </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"*"</span>
+<span class="w">        </span><span class="nt">source</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">externalCluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">old-pg-cluster</span>
+<span class="w">        </span><span class="nt">pgDumpExtraOptions</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--no-privileges</span>
+<span class="w">  </span><span class="nt">storage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
+<span class="w">  </span><span class="nt">externalClusters</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">old-pg-cluster</span>
+<span class="w">      </span><span class="nt">connectionParameters</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># Connect to the OLD cluster</span>
+<span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg-cluster-rw.postgres.svc.cluster.local</span>
+<span class="w">        </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">        </span><span class="nt">dbname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">        </span><span class="nt">sslmode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require</span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg-cluster-superuser</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+</code></pre></div>
+<p>This creates a fresh cluster that starts life as a clone of the old one.</p>
+<h4 id="step-3-the-switchover"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#step-3-the-switchover">Step 3: The Switchover</a></h4>
+<p>Once the new cluster was healthy and the data was synced, the magic happened. I simply updated the <code>ExternalName</code> service to point to the new cluster.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"pg-cluster-entrypoint"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalName</span>
+<span class="w">  </span><span class="c1"># Update DNS to point to the NEW Postgres 17 cluster</span>
+<span class="w">  </span><span class="nt">externalName</span><span class="p">:</span><span class="w"> </span><span class="s">'pg-cluster-17-rw.postgres.svc.cluster.local'</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</code></pre></div>
+<p>My applications started resolving the DNS to the new IP, and the migration was complete. I verified everything was working, and then decommissioned the old cluster.</p>
+<h3 id="conclusion"><a class="toclink" href="../../2025/12/26/migrating-postgresql-in-kubernetes-a-homelab-christmas-adventure/#conclusion">Conclusion</a></h3>
+<p>While upgrading databases in a Homelab doesn't carry the same financial risk as production, it’s a great playground to practice these "Advanced Level" patterns. Using an <code>ExternalName</code> service as a stable interface allowed me to swap the underlying infrastructure without having to reconfigure a single application.</p>
+<p>The process was surprisingly smooth, and now I'm set with the latest Postgres and OS versions for years to come. Hope this helps anyone else planning their holiday upgrades!</p>
+<p>Happy New Year 2025! 🎉</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-04-02 00:00:00+00:00">April 2, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">DevOps</a>, 
+              <a href="../datahublocal/" class="md-meta__link">Datahub.local</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="yet-another-kubernetes-to-do-list"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/">Yet Another Kubernetes To-Do List</a></h2>
+<p>Ever noticed how easy it is to kickstart your app on Kubernetes locally? Just a couple of commands and boom – it's up and running! But let's face it, real-world setups are a whole different ball game.</p>
+<p>Take my <a href="https://datahub-local.alvsanand.com/">Datahub.local</a> project, for example. It's not just a data platform; it's a whole ecosystem of things running on Kubernetes. I've also got monitoring, storage solutions, CI/CD pipelines and many more. So suddenly, The initial simplicity feels like a distant dream.</p>
+<p><img alt="Kubernetes To-Do List" src="/img/kubernetes-to-do-list.png" width="80%"></p>
+<h3 id="1-select-a-kubernetes-distribution"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#1-select-a-kubernetes-distribution">1. Select a Kubernetes Distribution</a></h3>
+<p>Choosing the right Kubernetes distribution is crucial, especially considering your specific needs and infrastructure requirements. Options range from full-fledged, self-managed distributions like vanilla Kubernetes to lightweight solutions tailored for low-end devices.</p>
+<ul>
+<li><strong>Vanilla</strong>: Ideal for environments where customization and control are paramount, <a href="https://kubernetes.io/">vanilla Kubernetes</a> offers the flexibility to tailor the cluster to your exact specifications. However, it may require more manual configuration and maintenance efforts.</li>
+<li><strong>Managed</strong>: Platforms like <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine (GKE)</a>, <a href="https://aws.amazon.com/es/eks/">Amazon Elastic Kubernetes Service (EKS)</a>, and <a href="https://azure.microsoft.com/es-es/products/kubernetes-service/">Microsoft Azure Kubernetes Service (AKS)</a> provide fully managed Kubernetes clusters, abstracting away much of the underlying infrastructure management. They're great for teams looking to offload operational overhead and focus on application development.</li>
+<li><strong>Enterprise</strong>: Solutions like <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a>, <a href="https://www.rancher.com/">Rancher</a> or <a href="https://www.vmware.com/products/vsphere/vsphere-with-tanzu.html">VMware Tanzu</a> offer enterprise-grade features and support, making them suitable for organizations with complex deployment requirements and regulatory compliance needs.</li>
+<li><strong>Lightweight</strong>: For resource-constrained environments or low-end devices, lightweight Kubernetes distributions like <a href="https://docs.k3s.io/">K3s</a> or <a href="https://microk8s.io/">MicroK8s</a> are excellent choices. k3s is optimized for production workloads in resource-constrained environments, while MicroK8s provides a lightweight, easy-to-install Kubernetes for development and testing purposes. These distributions offer reduced resource overhead and simplified installation, making them ideal for edge computing or IoT deployments.</li>
+</ul>
+<p>Consider factors such as ease of deployment, scalability, support, and compatibility with your existing infrastructure when evaluating Kubernetes distributions. Choose the one that best fits your project requirements and long-term goals, ensuring a smooth and efficient Kubernetes deployment experience.</p>
+<h3 id="2-storage-and-backup-strategy"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#2-storage-and-backup-strategy">2. Storage and Backup Strategy</a></h3>
+<p>Now it's time to review storage and backup – the backbone of our data resilience. Now, when it comes to picking the right storage solutions, we've got some solid options on the table. <strong>Longhorn</strong> and <strong>Rook/Ceph</strong> are likely your best bets for storage services.</p>
+<p>Think of <a href="https://longhorn.io/">Longhorn</a> as your go-to buddy for block storage. It's sleek, easy to use, and packs a punch when it comes to reliability. With features like built-in backup and restore capabilities, it's like having a safety net for your critical data.</p>
+<p>Now, if you're into distributed file systems, <a href="https://rook.io/">Rook/Ceph</a> is the big name of the market. It's like having your own personal cloud storage solution right in your Kubernetes cluster including its own S3 compatible solution. Plus, with Rook's seamless integration with Kubernetes, setting up and managing Ceph clusters becomes a breeze.</p>
+<p>So, whether you're storing mission-critical databases or hosting media files for your next big app, Longhorn and Rook/Ceph have got you covered. Keep your data safe, keep it resilient.</p>
+<h3 id="3-securing-external-services"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#3-securing-external-services">3. Securing External Services</a></h3>
+<p>Alright, let's talk about locking down those external services trying to cozy up with your Kubernetes cluster. You don't want just anyone waltzing in and causing chaos, right?</p>
+<p>So, first things first, let's beef up that security. Consider using an Ingress controller with TLS termination. You are ensuring encrypted communication between your services and the outside world. Plus, it adds that extra layer of protection against eavesdroppers.</p>
+<p>Now, onto authentication – because not everyone should get access. <a href="https://oauth2-proxy.github.io/oauth2-proxy/">OAuth2 Proxy</a> can be your best friend here. Think of them as the gatekeepers who verify everyone's credentials before they're allowed in. With an OAuth2 Proxy you can use providers like Google, Github, Keycloak or Dex, you can enforce user authentication and authorization policies, making sure only authorized users can interact with your services.</p>
+<p>But wait, there's more! Ever heard of <a href="https://www.cloudflare.com/es-es/products/tunnel/">Cloudflare Tunnel</a>? It's like your service's secret agent, keeping it hidden from prying eyes on the internet. Instead of exposing your services directly, Cloudflare Tunnel acts as a secure conduit, routing traffic through Cloudflare's network without exposing your server's IP address.</p>
+<h3 id="4-certificate-management"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#4-certificate-management">4. Certificate Management</a></h3>
+<p>What about managing certificates in Kubernetes? <a href="https://cert-manager.io/">Cert-Manager</a>'s got your back. It's like your personal assistant for all things TLS certificates. With Cert-Manager, you can automate the whole shebang – issuing, renewing, and revoking certificates – without breaking a sweat.</p>
+<p>Oh, and here's a pro tip: even for your local setups, consider using your own domain. Yeah, I know it sounds fancy, but trust me, it's worth it. It keeps things consistent across all environments, from local to production.</p>
+<h3 id="5-securing-secrets"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#5-securing-secrets">5. Securing Secrets</a></h3>
+<p>Keeping your sensitive data safe is like guarding the treasure chest of your app. With Kubernetes, you've got options aplenty for secret storage. You could start with the classic vanilla <a href="https://kubernetes.io/docs/concepts/configuration/secret/">Secrets</a>, where your secrets are stored in your cluster's etcd database. It gets the job done, but it's like hiding your keys under the doormat – not the most secure option out there.</p>
+<p>If you want to step up your game, consider <a href="https://sealed-secrets.netlify.app/">Sealed Secrets</a>. Think of them as secret messages locked tight with encryption, so even if someone snoops around, they can't make heads or tails of your precious data.</p>
+<p>Then there's <a href="https://external-secrets.io/latest/">External Secrets</a>, where you outsource secret management to specialized tools like HashiCorp Vault or AWS Secrets Manager. It's like having a super-secure vault guarded by dragons – nobody's getting in without the right keys.</p>
+<p>No matter which route you choose, make sure to encrypt your secrets at rest and in transit. Rotate them regularly like changing the combination on a safe, and you'll sleep soundly knowing your secrets are safe and sound.</p>
+<h3 id="6-deployment-automation-with-gitops-cd-tool"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#6-deployment-automation-with-gitops-cd-tool">6. Deployment Automation with GitOps CD Tool</a></h3>
+<p>Say goodbye to manual deployment headaches and hello to streamlined automation with GitOps Continuous Delivery (CD) tools like <a href="https://fluxcd.io/">Flux</a> and <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>. These tools take the hassle out of managing Kubernetes resources by syncing your cluster state with version-controlled Git repositories.</p>
+<p>With <a href="https://fluxcd.io/">Flux</a>, you can define your desired cluster state in Git and let Flux automatically apply those changes to your cluster, keeping everything in sync effortlessly. It's like having a trusty assistant who ensures your applications are always up-to-date without you lifting a finger.</p>
+<p>On the other hand, <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a> provides a slick user interface for visualizing and managing your Kubernetes applications. Simply declare your desired state in Git, and Argo CD will continuously monitor your repository for changes, automatically applying them to your cluster. It's like having a personal Kubernetes concierge, always ready to cater to your deployment needs.</p>
+<p>Whether you prefer Flux's simplicity or Argo CD's user-friendly interface, embracing GitOps principles with these CD tools will revolutionize your deployment workflows, making them smoother, more reliable, and ultimately more enjoyable.</p>
+<h3 id="7-monitoring-and-observability-stack"><a class="toclink" href="../../2024/04/02/yet-another-kubernetes-to-do-list/#7-monitoring-and-observability-stack">7. Monitoring and Observability Stack</a></h3>
+<p>Next thing you want to keep a close eye on is what's happening in your Kubernetes cluster, right?</p>
+<p>First up, we've got the <a href="https://github.com/prometheus-operator/kube-prometheus">kube-prometheus-stack</a>. It's like your Swiss Army knife for Kubernetes monitoring. With <a href="https://prometheus.io/">Prometheus</a> for metrics and <a href="https://grafana.com/">Grafana</a> for visualization, it's a powerhouse combo that gives you all the insights you need into your cluster's health and performance. Besides, you can install <a href="https://github.com/grafana/loki">Loki</a> for logs aggregation.</p>
+<p>But hey, maybe you're not into managing all that yourself. No worries! There are some fantastic SaaS options like <a href="https://www.datadoghq.com/">Datadog</a> and <a href="https://www.dynatrace.com/">Dynatrace</a>. These guys handle all the heavy lifting for you, giving you top-notch monitoring and observability without the hassle of managing your own stack.</p>
+<p>Plus, there are tools like <a href="https://home.robusta.dev/">Robusta</a> which can help automate essential SRE actions, saving you time and headaches.</p>
+<p>So whether you choose one or another depends on free cost or prefer the convenience of a managed service, there's something out there to suit your monitoring needs.</p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.tooltips", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

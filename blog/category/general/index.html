@@ -1,0 +1,937 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is the personal blog of Alvaro Santos">
+      
+      
+        <meta name="author" content="Alvaro Santos Andres">
+      
+      
+        <link rel="canonical" href="https://alvsanand.com/blog/category/general/">
+      
+      
+        <link rel="prev" href="../devops/">
+      
+      
+        <link rel="next" href="../hardware/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>General - alvsanand.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="alvsanand.com" class="md-header__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            alvsanand.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="alvsanand.com" class="md-nav__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    alvsanand.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../datahublocal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datahub.local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="general">General</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-02-04 00:00:00+00:00">February 4, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">General</a>, 
+              <a href="../hardware/" class="md-meta__link">Hardware</a>, 
+              <a href="../datahublocal/" class="md-meta__link">Datahub.local</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="homelab-for-begineers"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/">Homelab For Begineers</a></h2>
+<p>Another week brings with it a new update on <a href="https://www.alvsanand.com/datahub-local/">Datahub.local</a>. In our previous post <a href="../../2024/01/28/journey-to-datahublocal/">Journey to Datahub.local</a>, we saw a general overview of how I plan to execute this project with details about goals, steps and some rules. This time, we're delving into the realm of <strong>Homelabs</strong> or <strong>Home Labs</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this article, I will exclusively concentrate on the hardware perspective. Subsequent topics to be covered in the future will include areas such as operating systems, bootstrapping, application orchestration, security, and more.</p>
+</div>
+<h3 id="what-is-a-homelab"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#what-is-a-homelab">What is a Homelab?</a></h3>
+<p><img alt="Homelab" src="/img/homelab.jpg" width="50%"></p>
+<p>If <em>Homelab</em> is as foreign word to you as a penguin in the desert, let me break it down for you. A Homelab is like having your own little tech playground at home – a server or a bunch of them where you can host any kind of applications and services.</p>
+<p>Furthermore, a <em>Homelab</em> is a dedicated space where IT enthusiasts and professionals can experiment with various hardware and software configurations in a controlled environment. It's essentially a mini data center at home, providing a hands-on experience for learning, testing, and skill development.</p>
+<h3 id="why-do-you-need-a-homelab"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#why-do-you-need-a-homelab">Why do you need a homelab?</a></h3>
+<p>You don't but setting up a Homelab is a powerful tool for personal and professional growth in the IT field. It allows you to:</p>
+<ul>
+<li><strong>Gain Practical Experience</strong>: Homelabs provide a platform to apply theoretical knowledge in a real-world setting, helping you build confidence in your skills.</li>
+<li><strong>Test New Technologies</strong>: Stay ahead of the curve by experimenting with the latest technologies and software without the fear of disrupting a production environment.</li>
+<li><strong>Enhance Troubleshooting Skills</strong>: Encounter and resolve issues in a controlled environment, honing your ability to troubleshoot and debug problems effectively.</li>
+</ul>
+<h3 id="components"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#components">Components</a></h3>
+<p>A well-rounded Homelab typically includes the following components:</p>
+<pre class="mermaid"><code>graph TB
+  subgraph SR ["Server Rack / Cabinet"]
+    subgraph C [Computing Hardware]
+      S1[Server 1]
+      S2[Server 2]
+      DP[Desktop PC]
+    end
+
+    subgraph N [Networking Equipment]
+      R[Router]
+      R[Switch]
+      A[Access Point]
+    end
+
+    subgraph S [Storage Solutions]
+      LS[Local Storage]
+      NAS[NAS]
+      CS[Cloud Storage]
+    end
+
+    subgraph P [Power Management]
+      UPS[UPS]
+      PS[Power Supply]
+    end
+
+    CM[Cable Management]
+  end
+
+  P --&gt; C --&gt; N &amp; S
+  UPS --&gt; PS
+  S1 &lt;--&gt; S2 &lt;--&gt; DP</code></pre>
+<p>Understanding how these components interact is essential for creating a functional and efficient Homelab.</p>
+<h4 id="computing-hardware"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#computing-hardware">Computing Hardware</a></h4>
+<p>Compute infrastructure forms the backbone of a Homelab and typically includes servers and client machines. These can range from repurposed desktop computers to dedicated server hardware. These machines run various virtual machines or containers, enabling users to create and manage different computing environments.</p>
+<ul>
+<li><strong>Servers</strong>: Dedicated server hardware, such as enterprise-grade servers, repurposed desktop computers, or rack-mounted servers. These servers run virtual machines or containers to create different computing environments.</li>
+<li><strong>Workstations</strong>: High-performance desktops and laptops for various tasks, including development, testing, and running specific applications.</li>
+<li><strong>Microcontrollers</strong>: Small devices like Raspberry Pi or Arduino for projects requiring low-power consumption or specialized functionalities.</li>
+</ul>
+<h4 id="networking-equipment"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#networking-equipment">Networking Equipment</a></h4>
+<p>Networking components are needed for connecting the computing devices.</p>
+<ul>
+<li><strong>Routers</strong>: Home routers for basic networking needs or enterprise-grade routers for more advanced configurations.</li>
+<li><strong>Switches</strong>: Unmanaged switches for simple setups or managed switches for network customization and optimization.</li>
+<li><strong>Access Points</strong>: Single-band or dual-band access points for wireless networking within the Homelab.</li>
+</ul>
+<h4 id="storage-solutions"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#storage-solutions">Storage Solutions</a></h4>
+<p>Data is the essential aspect of any Homelab. Having a well-organized storage setup is key for running applications and storing the data. Therefore, choose storage solutions based on capacity and performance requirements.</p>
+<ul>
+<li><strong>Local Storage</strong>: Hard disk drives (HDD) or solid-state drives (SSD) for storing data on individual servers or workstations.</li>
+<li><strong>Network-Attached Storage (NAS)</strong>: Dedicated NAS devices or DIY NAS setups using software like FreeNAS to centralize storage.</li>
+<li><strong>Cloud Storage</strong>: Utilizing cloud storage services such as AWS S3 or Google Cloud Storage for offsite backups or data sharing.</li>
+</ul>
+<h4 id="power-management"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#power-management">Power Management</a></h4>
+<p>Ensuring a stable power to our devices is crucial for the reliability. Besides, we need also ways to protect against power outages and provide time to shut down equipment properly.</p>
+<ul>
+<li><strong>Power Supplies</strong>: Standard ATX power supplies for individual components or redundant power supplies for servers.</li>
+<li><strong>Uninterruptible Power Supplies (UPS)</strong>: Line-interactive or online UPS to protect against power outages and provide time for proper shutdown.</li>
+</ul>
+<h4 id="organization-tools"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#organization-tools">Organization Tools</a></h4>
+<p>Using tools for organizing the rest of components is essential to have an efficient and tidy Homelab setup. hey help maximize space, improve airflow, and provide a structured environment for your components. Proper organization enhances accessibility and aesthetics.</p>
+<ul>
+<li><strong>Server Racks</strong>: An open structure with vertical mounting rails, lacking side panels and doors. </li>
+<li><strong>Cabinets</strong>: An enclosed structure with side panels, front/rear doors, and often locking mechanisms. Provides additional security, protection from dust, and controlled airflow. Suitable for a neater appearance and reduced noise.</li>
+<li><strong>Cable Management</strong>: Cable organizers and ties for maintaining a clean and organized cabling infrastructure.</li>
+</ul>
+<h3 id="cool-ideas-for-your-homelab"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#cool-ideas-for-your-homelab">Cool Ideas for Your Homelab</a></h3>
+<p><img alt="Apps" src="/img/apps.png"></p>
+<p>Now that you have your Homelab set up, the possibilities are endless for exciting projects and experiments. Here are some cool ideas to spark your creativity:</p>
+<ul>
+<li><strong>Home Automation Hub</strong>: Transform your Homelab into a central hub for home automation. Use platforms like Home Assistant or OpenHAB to control smart devices, set up routines, and experiment with IoT (Internet of Things) integrations.</li>
+<li><strong>Media Server</strong>: Create a media server to centralize your music, movies, and TV shows. Platforms like Plex or Jellyfin allow you to organize and stream your media collection to various devices within your home network.</li>
+<li><strong>Private Cloud Services</strong>: Explore self-hosted cloud services using tools like Nextcloud or ownCloud. Set up your private cloud for file storage, calendar, contacts, and more, providing an alternative to commercial cloud solutions.</li>
+<li><strong>Game Server Hosting</strong>: Host your own game servers for popular titles or create a Minecraft server for you and your friends. It's a fun way to enjoy gaming while managing server configurations and networking.</li>
+<li><strong>Dockerized Applications</strong>: Experiment with containerization using Docker. Deploy applications like WordPress, GitLab, or Grafana in containers, making it easy to manage, update, and scale your services.</li>
+<li><strong>DevOps Playground</strong>: Turn your Homelab into a DevOps playground. Practice continuous integration and deployment (CI/CD) pipelines, container orchestration with Kubernetes, and explore infrastructure as code (IaC) with tools like Ansible or Terraform.</li>
+<li><strong>Network Monitoring</strong>: Set up network monitoring tools such as Nagios, Prometheus, or Grafana to gain insights into your Homelab's performance. Monitor bandwidth, device health, and other metrics to enhance your networking skills.</li>
+<li><strong>Machine Learning Playground</strong>: Explore machine learning and artificial intelligence in your Homelab. Set up Jupyter Notebooks, TensorFlow, or other ML frameworks to experiment with data analysis, model training, and predictive analytics.</li>
+</ul>
+<h3 id="tips-to-create-a-low-cost-homelab"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#tips-to-create-a-low-cost-homelab">Tips to Create a Low-cost Homelab</a></h3>
+<p>Finally, I'll be sharing some tips for assembling your own Homelab without breaking the bank. Keep in mind that building a functional Homelab doesn't have to strain your finances. Here are some frugal tips to consider:</p>
+<ul>
+<li><strong>Reuse Old Hardware</strong>: Give a new purpose to old computers and laptops by transforming them into servers or testing machines.</li>
+<li><strong>Buy Microcontrollers</strong>: buy budget devices like Raspberry Pi, which not only come at a lower cost but can also serve for running small applications.</li>
+<li><strong>Open-source Software</strong>: Leverage free and open-source software for virtualization, networking, and storage solutions.</li>
+<li><strong>Energy-efficient Components</strong>: Opt for energy-efficient hardware to save on electricity costs.</li>
+<li><strong>Start small</strong>: Familiarize yourself with the process through a small-scale project. As you gain more experience, you can advance to larger and more sophisticated setups.</li>
+</ul>
+<h3 id="conclusion"><a class="toclink" href="../../2024/02/04/homelab-for-begineers/#conclusion">Conclusion</a></h3>
+<p>In summary, a Homelab proves to be a flexible resource for IT enthusiasts of all expertise levels. Whether you're a novice eager to delve into fundamentals or a seasoned professional aiming to stay abreast of cutting-edge technologies, a Homelab offers a dynamic and adaptable learning space. Begin modestly, and witness your Homelab expand in tandem with your IT proficiency.</p>
+<p>Keep in mind that the crucial aspect is aligning your Homelab projects with your specific interests and objectives. Just make it <strong>fun</strong> and <strong>enjoyable</strong> so your <strong>learning journey</strong> will be a great success.</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-01-28 00:00:00+00:00">January 28, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">General</a>, 
+              <a href="../datahublocal/" class="md-meta__link">Datahub.local</a>, 
+              <a href="../learning/" class="md-meta__link">Learning</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="journey-to-datahublocal"><a class="toclink" href="../../2024/01/28/journey-to-datahublocal/">Journey to Datahub.local</a></h2>
+<p>Hey there! If my previous post, <a href="202401_embracing-the-challenge.md">Embracing the Challenge</a>, you know I’m on a mission in 2024. The quest? Crafting my own Data Platform from scratch called <a href="https://www.alvsanand.com/datahub-local/">Datahub.local</a>. It’s not just about data – it’s about diving headfirst into the unknown, learning, experimenting, and enjoying the ride. In this article, we're going to map out the game plan for this adventure.</p>
+<p><img alt=" Journey to Datahub.local" src="/img/datahub-local-plan.png"></p>
+<h3 id="goals"><a class="toclink" href="../../2024/01/28/journey-to-datahublocal/#goals">Goals</a></h3>
+<p>Embarking on this project requires clear objectives. Let's delve into the goals that will shape my journey.</p>
+<ol>
+<li><strong>Hands-On Experience</strong>: Dive into practical applications to solidify learning.</li>
+<li><strong>Self-Directed Learning</strong>: Take charge of my educational path and explore diverse aspects of data management.</li>
+<li><strong>Experimentation &amp; Innovation</strong>: Encourage creative problem-solving and novel approaches.</li>
+<li><strong>Portfolio Development</strong>: Build a showcase of skills and projects for professional growth.</li>
+<li><strong>Real Experience</strong>: Implement the acquired knowledge in real-world scenarios.</li>
+</ol>
+<h3 id="whats-the-game-plan"><a class="toclink" href="../../2024/01/28/journey-to-datahublocal/#whats-the-game-plan">What’s the game plan?</a></h3>
+<p>With the goals established, it's time to devise a concrete plan that will guide my efforts and actions.</p>
+<ol>
+<li><strong>Create my own Homelab</strong>: Opt for a cost-effective approach by building a Homelab using small ARM devices, steering clear of excessive cloud expenses.</li>
+<li><strong>Deploy Base Components</strong>: Establish the foundation for the Data Platform with a Kubernetes cluster. Bootstrap it with DevOps components like ArgoCD, Prometheus, Grafana, etc., ensuring security and performance.</li>
+<li><strong>Build the Data Platform</strong>: Design and deploy a tailored Modern Data infrastructure, aligning with personal requirements and preferences.</li>
+<li><strong>Develop an E2E use case</strong>: Develop a meaningful data project to gain practical experience and evaluate the strengths and weaknesses of the new tools. Move beyond the traditional "hello world" approach.</li>
+</ol>
+<h3 id="principles"><a class="toclink" href="../../2024/01/28/journey-to-datahublocal/#principles">Principles</a></h3>
+<p>Finally, every project needs a compass. So, here are some principles to keep things on track and fun.</p>
+<ul>
+<li><strong>Learn and Enjoy</strong>: Prioritize the enjoyment of the learning process.</li>
+<li><strong>Set Budget and Time Constraints</strong>: Be proactive by defining a budget and timeframe, allowing for efficient progress.</li>
+<li><strong>Flexibility</strong>: Postpone tasks that don't contribute to enjoyment or learning.</li>
+<li><strong>Innovation</strong>: Embrace new components, software, or techniques, even if they aren't the best – the goal is to innovate.</li>
+</ul>
+<p>And there you have it, folks! This sets the stage for my project. Next up, I'll spill the tea on the hardware I've snagged as I gear up for the exciting phase of implementation. Stay tuned for the next update!</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-01-22 00:00:00+00:00">January 22, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">General</a>, 
+              <a href="../datahublocal/" class="md-meta__link">Datahub.local</a>, 
+              <a href="../learning/" class="md-meta__link">Learning</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="embracing-the-challenge"><a class="toclink" href="../../2024/01/22/embracing-the-challenge/">Embracing the Challenge</a></h2>
+<p><img align="left" alt="Embracing the Challenge" src="/img/embracing-the-challenge.jpg" width="35%"></p>
+<p>With over 15 years as a <strong>software engineer</strong>, my journey has been a rollercoaster of jobs across various companies and teams — some great, some not so much. One revelation that I had is <strong>how fast the technology evolves</strong>. In just a few short years, your tech portfolio can become outdated, a relic of a bygone era. Although I've never considered myself a genius, what I do possess is an <strong>unwavering determination and consistency</strong>. Identifying my weaknesses has been key, whether in personal growth or, in this context, keeping up to date. </p>
+<p>As explained before, change is the only constant in the IT work and you must adapt to it, especially from a technological standpoint. Over the past decade, I dedicated significant time to staying current — a pursuit that has proven both <strong>gratifying and demanding</strong>. The knowledge acquired has empowered me to accomplish tasks that seemed unimaginable just a year earlier. The magic happens when you step <strong>out of your comfort zone</strong>.</p>
+<p>Here's a brief compilation of activities to help you step outside your comfort zone:</p>
+<ul>
+<li><strong>Seek Feedback:</strong> Actively gather feedback from peers to identify areas for improvement.</li>
+<li><strong>Explore New Opportunities:</strong> If growth stagnates, don't hesitate to explore new job opportunities or challenges.</li>
+<li><strong>Never Stop Learning:</strong> Learning is the lifeline of our industry. Constantly evolve by staying informed and acquiring new skills.</li>
+</ul>
+<p>And speaking of learning, here are some effective ways to do it:</p>
+<ul>
+<li><strong>Stay Updated:</strong> Engage with relevant sources such as Reddit groups, tech personalities, or media (YouTube channels, podcasts).</li>
+<li><strong>E-Learning and Reading:</strong> Enroll in courses on e-learning platforms or dive into insightful books. These are particularly beneficial for beginners.</li>
+<li><strong>Certifications Matter:</strong> Pursue certifications that are in high demand. It's a challenging journey but adds valuable personal experience.</li>
+<li><strong>Dive into New Projects:</strong> Participate in open-source initiatives or start your projects for a more hands-on learning experience.</li>
+</ul>
+<p>As we enter the year 2024, I feel the need to take on something distinct, personal, and significant — an activity that propels me far beyond my comfort zone. Hence, I would like to start a new project called <a href="https://datahub-local.alvsanand.com/"><strong>Datahub.local</strong></a>. Over the upcoming months, my goal is to conceive, create, and sustain <strong>a personalized Data Platform</strong> that can be operated within the confines of my home. This will afford me the opportunity to engage in exploration, experimentation, and, most importantly, <strong>learn from failures</strong>. Additional details will be shared in forthcoming articles.</p>
+<p><img alt="Datahub.local" src="https://alvsanand.com/datahub-local/assets/img/logo.png" width="40%"></p>
+<p>So, buckle up, because my new journey of <strong>reinvention has just begun</strong>.</p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.tooltips", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
