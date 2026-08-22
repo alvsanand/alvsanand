@@ -7,7 +7,7 @@ categories:
   - Learning
 ---
 
-# Understanding the AI Agent Harness: The Architecture Behind Autonomous Coding
+# Understanding the AI Agent Harness
 
 Large Language Models (LLMs) like **Claude 3.7 Sonnet**, **Claude 3.5 Opus**, or **DeepSeek V3** are exceptional at reasoning, but they are fundamentally stateless text generators. They cannot directly view your repository, modify files on disk, or run your unit tests. An LLM acts as a central processor without operating system access: it generates code, but it lacks the execution layer needed to verify or deploy that code.
 
