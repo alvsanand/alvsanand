@@ -9,7 +9,7 @@ categories:
 
 # Understanding the AI Agent Harness
 
-Large Language Models (LLMs) like **Claude 3.7 Sonnet**, **Claude 3.5 Opus**, or **DeepSeek V3** are exceptional at reasoning, but they are fundamentally stateless text generators. They cannot directly view your repository, modify files on disk, or run your unit tests. An LLM acts as a central processor without operating system access: it generates code, but it lacks the execution layer needed to verify or deploy that code.
+Large Language Models (LLMs) like **Claude 5 Opus**, or **GPT-5.6**, or **DeepSeek V4** are exceptional at reasoning, but they are fundamentally stateless text generators. They cannot directly view your repository, modify files on disk, or run your unit tests. An LLM acts as a central processor without operating system access: it generates code, but it lacks the execution layer needed to verify or deploy that code.
 
 To transform an LLM into a fully functional coding assistant like **OpenCode**, you need an **Agent Harness**.
 
@@ -180,43 +180,5 @@ Understanding modern AI architecture requires distinguishing between these three
 | **UI (The Interface)**   | Rendering diffs, displaying terminal outputs, receiving user prompts.                                       | VS Code Extension, Go-based Terminal TUI/CLI                              |
 
 ---
-
-By surrounding the language model with an **Agent Harness**, frameworks like OpenCode transform raw LLM intelligence into an enterprise-grade developer tool—combining reasoning flexibility with strict, sandboxed, and verified code execution.
-## Deep Dive: The Key Modules of OpenCode's Harness
-
-To maintain stability across complex, multi-turn coding sessions, OpenCode relies on several specialized internal harness subsystems.
-
-### Context Management & History Pruning
-
-Token windows are finite, and dumping full file contents on every step quickly leads to context limits or high API costs. The OpenCode harness uses **sliding window pruning** and **summarization layers**. Older interaction turns are summarized into high-level status updates, while recent tool outputs are kept verbatim. This allows the agent to run dozens of tool execution cycles without losing track of the main objective.
-
-### AST-Guided File Patching
-
-Generating entire code files on every edit is slow and error-prone. The OpenCode harness utilizes precision line-editing and Abstract Syntax Tree (AST) validation. When the model requests a file update, the harness applies the patch and performs an immediate syntax check. If the edit creates broken syntax, the harness catches the error immediately—before saving—and prompts the model to correct the diff.
-
-### Deterministic Safety Circuit Breakers
-
-Agents can fall into infinite loop patterns when stuck on a failing bug or a failing test suite. OpenCode implements **Circuit Breaker Mechanics**:
-
-* **Loop Detection:** If the harness observes the exact same tool call failing $N$ consecutive times, it halts execution automatically.
-* **Budget Controls:** It enforces token and cost limits per session to prevent runaway API spending.
-
----
-
-## Harness vs. Model vs. UI: A Clear Separation
-
-Understanding modern AI architecture requires distinguishing between these three layers:
-
-| Component                | Responsibility                                                                                              | Examples in OpenCode                                                  |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **LLM (The Brain)**      | Language processing, logic, planning, and tool request generation.                                          | Claude 3.7 Sonnet, Claude 3.5 Opus, DeepSeek V3, GPT-4o               |
-| **Harness (The Engine)** | Execution loop control, context packaging, file system I/O, tool execution, safety checks, log persistence. | OpenCode Core Runtime (`harness_boot`, Tool Routers, Memory Managers) |
-| **UI (The Interface)**   | Rendering diffs, displaying terminal outputs, receiving user prompts.                                       | VS Code Extension, Terminal CLI                                       |
-
----
-
-## Why Harness Engineering is the Future of AI Development
-
-An LLM alone is simply a probabilistic text predictor. It requires external control systems to act reliably in complex, deterministic environments like software engineering.
 
 By surrounding the language model with an **Agent Harness**, frameworks like OpenCode transform raw LLM intelligence into an enterprise-grade developer tool—combining reasoning flexibility with strict, sandboxed, and verified code execution.
