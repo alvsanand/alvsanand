@@ -7,7 +7,7 @@ categories:
   - Learning
 ---
 
-# AWS and DuckDB: should we panic?
+# AWS and DuckDB: a Wild West Story
 
 On August 26, DuckDB announced that **DuckLabs is joining AWS** as a new
 subsidiary. It is big news in the data world. The internet is already preparing
@@ -19,6 +19,8 @@ intellectual property. According to the announcement, DuckDB, DuckLake, Quack an
 the extensions will remain open source under the MIT license.
 
 So, should we worry? Of course we should. We are engineers. I have three theories.
+
+![opencode Loop](/img/duckdb_and_aws.jpg){ width="80%" }
 
 ## 1. The good theory: AWS will pay the bills
 
