@@ -19,6 +19,8 @@ repackage the tool as a managed service, and the corporate sponsor panics and
 pulls the rug: the permissive open-source license is swapped for a restrictive,
 proprietary one.
 
+![The open source trojan horse timeline](/img/oss-trojan-horse.jpg){ width="80%" }
+
 ## The bait-and-switch problem
 
 To be clear: building closed-source or source-available software is not bad by
@@ -42,9 +44,6 @@ build a defensible business model.
 
 When companies change the rules of the game in the middle of the game, it almost
 always starts an ecosystem war.
-
-![The open source trojan horse timeline](/img/oss-trojan-horse.jpg){ width="80%" }
-
 * **2018, MongoDB's SSPL salvo.** MongoDB drops its open-source license for the
   new Server Side Public License (SSPL), to force cloud providers to open source
   their underlying management infrastructure. AWS answers with DocumentDB, a
