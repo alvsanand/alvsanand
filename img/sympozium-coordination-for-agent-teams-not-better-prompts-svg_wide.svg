@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Diagram: Kubernetes supplies what an agent run needs as a workload, but not the three things that make agents a team — what they may share, how work is handed off, and memory that outlives a pod. Sympozium supplies those three as custom resources.">
+  <title>What Kubernetes cannot supply — and Sympozium does</title>
+  <style>
+    @font-face { font-family: "Space Grotesk"; src: local("Space Grotesk"); font-display: swap; }
+    @font-face { font-family: "JetBrains Mono"; src: local("JetBrains Mono"); font-display: swap; }
+    .bg  { fill: #0E1116; }
+    .fg  { fill: #F4F2EC; }
+    .mut { fill: rgba(244, 242, 236, 0.75); }
+    .ac  { fill: #7FAF5A; }
+    .acS { fill: #A3CF7A; }
+    .acD { fill: #5E8A3F; }
+    text {
+      font-family: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+    }
+    .mono { font-family: "JetBrains Mono", Menlo, Consolas, monospace; }
+    .kicker { font-size: 13px; letter-spacing: 4.2px; }
+    .title  { font-size: 34px; font-weight: 700; letter-spacing: -0.4px; }
+    .sub    { font-size: 17px; }
+    .h2     { font-size: 12.5px; letter-spacing: 2.6px; font-weight: 600; }
+    .k8s    { font-size: 15px; }
+    .gapT   { font-size: 19px; font-weight: 600; }
+    .ansT   { font-size: 19px; font-weight: 600; }
+    .cardB  { font-size: 13.5px; }
+    .rule   { stroke: rgba(244, 242, 236, 0.75); }
+    text { line-height: 1; }
+    #rows text { line-height: 1; dominant-baseline: auto; }
+
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes breatheBox {
+      0%   { opacity: 0.22; }
+      50%  { opacity: 0.6; }
+      100% { opacity: 0.22; }
+    }
+    @keyframes sheen {
+      0%   { transform: translateY(-340px); opacity: 0; }
+      10%  { opacity: 0.45; }
+      90%  { opacity: 0.45; }
+      100% { transform: translateY(760px); opacity: 0; }
+    }
+    @keyframes pulseDot {
+      0%   { opacity: 0.25; transform: scale(1); }
+      50%  { opacity: 0.95; transform: scale(1.32); }
+      100% { opacity: 0.25; transform: scale(1); }
+    }
+    @keyframes camMove {
+      0%   { transform: translate(0px, 0px); }
+      50%  { transform: translate(-5px, -4px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    @keyframes drawLine {
+      0%   { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* camera + ambient idle: never fades content */
+    #cam   { animation: camMove 30s ease-in-out infinite; opacity: 1; }
+    .sheen { animation: sheen 13s ease-in-out infinite; }
+    .glow  { animation: breatheBox 6.6s ease-in-out infinite; }
+    .dot   { animation: pulseDot 3.4s ease-in-out infinite; }
+    .dot.b { animation-delay: .8s; }
+    .dot.c { animation-delay: 1.6s; }
+
+    /* resting state: content always ends opaque */
+    #head, #workload, #rows, #boundary { opacity: 1; animation-fill-mode: both; }
+
+    /* staggered entrances, one overlapping wave */
+    #head     { animation: fadeUp 1.0s cubic-bezier(.22,.85,.28,1) both; animation-delay: 0s; }
+    #workload { animation: fadeUp 1.0s ease-out both; animation-delay: .6s; }
+    #r1 { animation: fadeIn .85s ease-out both; animation-delay: 1.5s; }
+    #r2 { animation: fadeIn .85s ease-out both; animation-delay: 1.85s; }
+    #r3 { animation: fadeIn .85s ease-out both; animation-delay: 2.2s; }
+    #boundary { animation: fadeUp 1.0s ease-out both; animation-delay: 3.4s; }
+    .arrow { stroke-dasharray: 400; animation: drawLine .9s ease-out both; }
+    #r1 .arrow { animation-delay: 1.75s; }
+    #r2 .arrow { animation-delay: 2.1s; }
+    #r3 .arrow { animation-delay: 2.45s; }
+  </style>
+
+  <defs>
+    <linearGradient id="sheenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#A3CF7A" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#A3CF7A" stop-opacity="0.085"/>
+      <stop offset="100%" stop-color="#A3CF7A" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="planeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#5E8A3F" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#5E8A3F" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="720"/>
+
+  <!-- ambient sheen on the background plane, outside the camera group -->
+  <g id="sheenLayer" pointer-events="none" aria-hidden="true" data-layout-allow-overflow="true">
+    <rect class="sheen" x="0" y="0" width="1280" height="340" fill="url(#sheenGrad)"/>
+  </g>
+
+  <g id="cam" data-layout-allow-overflow="true">
+
+    <!-- ============ HEADER ============ -->
+    <g id="head">
+      <text class="kicker acS mono" x="56" y="62">SYMPOZIUM</text>
+      <text class="title fg mono" x="54" y="110">WHAT KUBERNETES CANNOT SUPPLY</text>
+      <text class="title acS mono" x="54" y="152">&#8212; AND SYMPOZIUM DOES</text>
+      <line class="rule" x1="56" y1="178" x2="1224" y2="178" stroke-width="1" opacity="0.22"/>
+    </g>
+
+    <!-- ============ THE HALF THAT IS ALREADY SOLVED ============ -->
+    <g id="workload">
+      <text class="h2 mut mono" x="56" y="204">ALREADY SOLVED &#183; AN AGENT RUN IS A WORKLOAD</text>
+      <text class="k8s mut" x="56" y="236">a model endpoint, a tool set, a filesystem,</text>
+      <text class="k8s mut" x="56" y="260">an identity, a timeout, an audit record</text>
+      <text class="k8s acS" x="56" y="286">you already operate the component that supplies all six</text>
+    </g>
+
+    <!-- ============ THE THREE THINGS IT CANNOT SUPPLY ============ -->
+    <g id="rows">
+
+      <g id="r1">
+        <rect x="56" y="316" width="452" height="76" rx="10" fill="none" stroke="rgba(244,242,236,0.28)" stroke-width="1.2"/>
+        <text class="h2 mut mono" x="78" y="342">GAP 1</text>
+        <text class="gapT mut" x="78" y="368">what may one agent share</text>
+        <text class="cardB mut" x="78" y="386">with another member's context?</text>
+
+        <path class="arrow" d="M516 354 L584 354" stroke="#7FAF5A" stroke-width="2" fill="none"/>
+        <path d="M578 348 L590 354 L578 360 Z" class="ac"/>
+        <circle class="dot" cx="550" cy="354" r="3"/>
+
+        <rect x="600" y="316" width="624" height="76" rx="10" fill="url(#planeGrad)" stroke="#7FAF5A" stroke-width="1.4"/>
+        <text class="acS mono" x="622" y="342" font-size="12.5">SYNTHETIC MEMBRANE</text>
+        <text class="ansT fg" x="622" y="368">trust groups, tags, field-level gating</text>
+        <text class="cardB mut" x="622" y="386">what a teammate may share &#8212; not what it can reach</text>
+      </g>
+
+      <g id="r2">
+        <rect x="56" y="408" width="452" height="76" rx="10" fill="none" stroke="rgba(244,242,236,0.28)" stroke-width="1.2"/>
+        <text class="h2 mut mono" x="78" y="434">GAP 2</text>
+        <text class="gapT mut" x="78" y="460">how does work pass</text>
+        <text class="cardB mut" x="78" y="478">without losing context?</text>
+
+        <path class="arrow" d="M516 446 L584 446" stroke="#7FAF5A" stroke-width="2" fill="none"/>
+        <path d="M578 440 L590 446 L578 452 Z" class="ac"/>
+        <circle class="dot b" cx="550" cy="446" r="3"/>
+
+        <rect x="600" y="408" width="624" height="76" rx="10" fill="url(#planeGrad)" stroke="#7FAF5A" stroke-width="1.4"/>
+        <text class="acS mono" x="622" y="434" font-size="12.5">ENSEMBLES</text>
+        <text class="ansT fg" x="622" y="460">a Helm-like pack, reviewed as one artifact</text>
+        <text class="cardB mut" x="622" y="478">activate it and the controller stamps out the Agents</text>
+      </g>
+
+      <g id="r3">
+        <rect x="56" y="500" width="452" height="76" rx="10" fill="none" stroke="rgba(244,242,236,0.28)" stroke-width="1.2"/>
+        <text class="h2 mut mono" x="78" y="526">GAP 3</text>
+        <text class="gapT mut" x="78" y="552">where do findings live</text>
+        <text class="cardB mut" x="78" y="570">after the pod is gone?</text>
+
+        <path class="arrow" d="M516 538 L584 538" stroke="#7FAF5A" stroke-width="2" fill="none"/>
+        <path d="M578 532 L590 538 L578 544 Z" class="ac"/>
+        <circle class="dot c" cx="550" cy="538" r="3"/>
+
+        <rect x="600" y="500" width="624" height="76" rx="10" fill="url(#planeGrad)" stroke="#7FAF5A" stroke-width="1.4"/>
+        <text class="acS mono" x="622" y="526" font-size="12.5">SHARED MEMORY</text>
+        <text class="ansT fg" x="622" y="552">a SQLite pool that outlives the pod</text>
+        <text class="cardB mut" x="622" y="570">per-persona access control and time decay</text>
+      </g>
+    </g>
+
+  </g>
+</svg>
