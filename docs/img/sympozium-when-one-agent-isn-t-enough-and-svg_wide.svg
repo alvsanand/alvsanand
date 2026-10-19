@@ -1,1 +1,281 @@
-database
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Diagram: four agents in a pipeline fail to coordinate, and Sympozium resolves it with Kubernetes objects — Agent, Ensemble, SympoziumPolicy and AgentRun — while leaving placement and serving to other layers">
+  <title>Sympozium &#8212; four agents, coordinated as Kubernetes objects</title>
+  <style>
+    @font-face { font-family: "Space Grotesk"; src: local("Space Grotesk"); font-display: swap; }
+    @font-face { font-family: "JetBrains Mono"; src: local("JetBrains Mono"); font-display: swap; }
+    :root {
+      --bg: #0E1116;
+      --fg: #F4F2EC;
+      --mut: rgba(244, 242, 236, 0.75);
+      --ac: #7FAF5A;
+      --acS: #A3CF7A;
+      --acD: #5E8A3F;
+    }
+    .bg  { fill: #0E1116; }
+    .fg  { fill: #F4F2EC; }
+    .mut { fill: rgba(244, 242, 236, 0.75); }
+    .ac  { fill: #7FAF5A; }
+    .acS { fill: #A3CF7A; }
+    .acD { fill: #5E8A3F; }
+    .strokeAc  { stroke: #7FAF5A; fill: none; }
+    .strokeMut { stroke: rgba(244, 242, 236, 0.75); fill: none; }
+    text {
+      font-family: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+    }
+    .mono { font-family: "JetBrains Mono", Menlo, Consolas, monospace; }
+    .kicker { font-size: 13px; letter-spacing: 4.2px; }
+    .title  { font-size: 38px; font-weight: 700; letter-spacing: -1px; }
+    .sub    { font-size: 16px; }
+    .h2     { font-size: 13px; letter-spacing: 2.8px; font-weight: 600; }
+    .agentT { font-size: 16px; font-weight: 600; }
+    .cardT  { font-size: 17px; font-weight: 600; }
+    .fail   { font-size: 14px; }
+    .cardB  { font-size: 13px; }
+    .verdict{ font-size: 21px; font-weight: 600; }
+    .rule   { stroke: rgba(244, 242, 236, 0.75); }
+
+    /* ---- keyframes ---- */
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes drawLine {
+      0%   { stroke-dashoffset: 700; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes dashRun {
+      0%   { stroke-dashoffset: 120; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes breatheBox {
+      0%   { opacity: 0.22; }
+      50%  { opacity: 0.6; }
+      100% { opacity: 0.22; }
+    }
+    @keyframes sheen {
+      0%   { transform: translateY(720px); opacity: 0; }
+      12%  { opacity: 0.7; }
+      100% { transform: translateY(-200px); opacity: 0; }
+    }
+    @keyframes pulseDot {
+      0%   { opacity: 0.2; transform: scale(1); }
+      50%  { opacity: 0.95; transform: scale(1.32); }
+      100% { opacity: 0.2; transform: scale(1); }
+    }
+    @keyframes camMove {
+      0%   { transform: translate(0px, 0px); }
+      50%  { transform: translate(-5px, -4px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    @keyframes gearPulse {
+      0%   { opacity: 0.35; transform: scale(1); }
+      50%  { opacity: 1; transform: scale(1.3); }
+      100% { opacity: 0.35; transform: scale(1); }
+    }
+    @keyframes flow {
+      0%   { opacity: 0.15; }
+      50%  { opacity: 0.95; }
+      100% { opacity: 0.15; }
+    }
+
+    #cam { animation: camMove 30s ease-in-out infinite; }
+    .sheen { animation: sheen 11s linear infinite; }
+    .gear  { animation: gearPulse 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .dot   { animation: pulseDot 3.3s ease-in-out infinite; }
+    .dot.b { animation-delay: .8s; }
+    .dot.c { animation-delay: 1.6s; }
+    .dot.d { animation-delay: 2.4s; }
+    .flowDot { animation: flow 2.6s ease-in-out infinite; }
+    .flowDot.b { animation-delay: .65s; }
+    .flowDot.c { animation-delay: 1.3s; }
+    .planeGlow { animation: breatheBox 6.4s ease-in-out infinite; }
+
+    /* entrances: one overlapping wave */
+    #head  { animation: fadeUp 1.0s cubic-bezier(.22,.85,.28,1) both; animation-delay: 0s; }
+    #fails { animation: fadeIn 1.0s ease-out both; animation-delay: .45s; }
+    #f1 { animation: fadeUp .8s ease-out both; animation-delay: .6s; }
+    #f2 { animation: fadeUp .8s ease-out both; animation-delay: .82s; }
+    #f3 { animation: fadeUp .8s ease-out both; animation-delay: 1.04s; }
+    #pipe { animation: fadeIn 1.0s ease-out both; animation-delay: 1.3s; }
+    #p1 { animation: fadeUp .85s ease-out both; animation-delay: 1.45s; }
+    #p2 { animation: fadeUp .85s ease-out both; animation-delay: 1.68s; }
+    #p3 { animation: fadeUp .85s ease-out both; animation-delay: 1.91s; }
+    #p4 { animation: fadeUp .85s ease-out both; animation-delay: 2.14s; }
+    .pflow { stroke-dasharray: 120; animation: dashRun 1.0s ease-out both; }
+    #pf1 { animation-delay: 1.66s; }
+    #pf2 { animation-delay: 1.89s; }
+    #pf3 { animation-delay: 2.12s; }
+    .drop { stroke-dasharray: 700; animation: drawLine 1.4s ease-out both; animation-delay: 2.7s; }
+    .plane { animation: fadeUp 1.3s cubic-bezier(.22,.85,.28,1) both; animation-delay: 2.6s; }
+    #c1 { animation: fadeUp 1.0s ease-out both; animation-delay: 3.2s; }
+    #c2 { animation: fadeUp 1.0s ease-out both; animation-delay: 3.42s; }
+    #c3 { animation: fadeUp 1.0s ease-out both; animation-delay: 3.64s; }
+    #c4 { animation: fadeUp 1.0s ease-out both; animation-delay: 3.86s; }
+    #boundary { animation: fadeUp 1.1s ease-out both; animation-delay: 4.5s; }
+    #verdictA { animation: fadeUp 1.2s cubic-bezier(.22,.85,.28,1) both; animation-delay: 5.0s; }
+    #verdictB { animation: fadeUp 1.2s cubic-bezier(.22,.85,.28,1) both; animation-delay: 5.22s; }
+    .srcnote  { animation: fadeIn 1s ease-out both; animation-delay: 5.7s; }
+  </style>
+
+  <defs>
+    <linearGradient id="sheenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#A3CF7A" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#A3CF7A" stop-opacity="0.085"/>
+      <stop offset="100%" stop-color="#A3CF7A" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1A2028" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#12171D" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="planeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#5E8A3F" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#5E8A3F" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="720"/>
+
+  <g id="cam" data-layout-allow-overflow="true">
+    <g id="sheenLayer" pointer-events="none">
+      <rect class="sheen" x="0" y="0" width="1280" height="300" fill="url(#sheenGrad)"/>
+    </g>
+
+    <!-- ============ TITLE ============ -->
+    <g id="head">
+      <text class="kicker acS mono" x="56" y="54">AGENTS NEED COORDINATION</text>
+      <text class="title fg" x="54" y="100">Four agents. One job. Shared awareness.</text>
+      <text class="sub mut" x="56" y="130">split the work and the failures stop looking like bad prompting</text>
+      <line class="rule" x1="56" y1="150" x2="1224" y2="150" stroke-width="1" opacity="0.22"/>
+    </g>
+
+    <!-- ============ THE THREE COORDINATION FAILURES ============ -->
+    <g id="fails">
+      <text class="h2 mut mono" x="56" y="186">WHAT BREAKS ACROSS FOUR AGENTS</text>
+
+      <g id="f1">
+        <rect x="56" y="200" width="376" height="66" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.22)"/>
+        <circle class="dot acD" cx="78" cy="224" r="3.6"/>
+        <text class="fg fail" x="94" y="230">findings never reach the reviewer</text>
+        <text class="mut cardB mono" x="94" y="250">research never shared</text>
+      </g>
+      <g id="f2">
+        <rect x="452" y="200" width="376" height="66" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.22)"/>
+        <circle class="dot acD b" cx="474" cy="224" r="3.6"/>
+        <text class="fg fail" x="490" y="230">two agents pay for one search</text>
+        <text class="mut cardB mono" x="490" y="250">same budget, twice</text>
+      </g>
+      <g id="f3">
+        <rect x="848" y="200" width="376" height="66" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.22)"/>
+        <circle class="dot acD c" cx="870" cy="224" r="3.6"/>
+        <text class="fg fail" x="886" y="230">nobody can say who did what</text>
+        <text class="mut cardB mono" x="886" y="250">no record survives</text>
+      </g>
+    </g>
+
+    <!-- ============ THE FOUR-AGENT PIPELINE ============ -->
+    <g id="pipe">
+      <text class="h2 mut mono" x="56" y="306">THE JOB: ONE RESEARCHES, ONE DRAFTS, ONE REVIEWS, ONE FILES</text>
+
+      <g id="p1">
+        <rect x="56" y="320" width="248" height="78" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.30)"/>
+        <circle class="dot ac" cx="80" cy="352" r="3.8"/>
+        <text class="agentT fg" x="98" y="358">researcher</text>
+        <text class="mut cardB mono" x="80" y="382">gathers findings</text>
+      </g>
+      <g id="p2">
+        <rect x="342" y="320" width="248" height="78" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.30)"/>
+        <circle class="dot ac b" cx="366" cy="352" r="3.8"/>
+        <text class="agentT fg" x="384" y="358">drafter</text>
+        <text class="mut cardB mono" x="366" y="382">writes it up</text>
+      </g>
+      <g id="p3">
+        <rect x="628" y="320" width="248" height="78" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.30)"/>
+        <circle class="dot ac c" cx="652" cy="352" r="3.8"/>
+        <text class="agentT fg" x="670" y="358">reviewer</text>
+        <text class="mut cardB mono" x="652" y="382">checks it</text>
+      </g>
+      <g id="p4">
+        <rect x="914" y="320" width="248" height="78" rx="9" fill="url(#agentGrad)" stroke="rgba(244,242,236,0.30)"/>
+        <circle class="dot ac d" cx="938" cy="352" r="3.8"/>
+        <text class="agentT fg" x="956" y="358">filer</text>
+        <text class="mut cardB mono" x="938" y="382">files the result</text>
+      </g>
+
+      <!-- pipeline arrows with flow -->
+      <path id="pf1" class="pflow strokeAc" d="M308 359 L336 359" stroke-width="2" opacity="0.85"/>
+      <path d="M330 354 L340 359 L330 364 Z" class="ac"/>
+      <circle class="flowDot acS" cx="320" cy="359" r="3.4"/>
+      <path id="pf2" class="pflow strokeAc" d="M594 359 L622 359" stroke-width="2" opacity="0.85"/>
+      <path d="M616 354 L626 359 L616 364 Z" class="ac"/>
+      <circle class="flowDot acS b" cx="606" cy="359" r="3.4"/>
+      <path id="pf3" class="pflow strokeAc" d="M880 359 L908 359" stroke-width="2" opacity="0.85"/>
+      <path d="M902 354 L912 359 L902 364 Z" class="ac"/>
+      <circle class="flowDot acS c" cx="892" cy="359" r="3.4"/>
+    </g>
+
+    <!-- ============ DROPS FROM PIPELINE INTO THE CONTROL PLANE ============ -->
+    <g id="drops">
+      <path class="drop strokeAc" d="M180 398 L180 452" stroke-width="1.5" opacity="0.6"/>
+      <path class="drop strokeAc" d="M466 398 L466 452" stroke-width="1.5" opacity="0.6"/>
+      <path class="drop strokeAc" d="M752 398 L752 452" stroke-width="1.5" opacity="0.6"/>
+      <path class="drop strokeAc" d="M1038 398 L1038 452" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <!-- ============ THE KUBERNETES CONTROL PLANE ============ -->
+    <g id="plane">
+      <rect class="planeGlow" x="40" y="446" width="1200" height="176" rx="14" fill="none" stroke="#7FAF5A" stroke-width="2.2"/>
+      <rect class="plane" x="40" y="446" width="1200" height="176" rx="14" fill="url(#planeGrad)" stroke="#7FAF5A" stroke-width="1.4"/>
+      <g class="plane">
+        <text class="h2 acS mono" x="66" y="478">SYMPOZIUM PLUGS INTO KUBERNETES WITH CRDs</text>
+        <text class="mut" x="66" y="499" font-size="13">a way to add your own object types to the Kubernetes API, so ordinary tooling already understands them</text>
+      </g>
+
+      <g id="c1">
+        <rect x="66" y="514" width="270" height="94" rx="9" fill="#0E1116" stroke="#7FAF5A" stroke-opacity="0.5"/>
+        <text class="acS mono" x="84" y="540" font-size="13">OBJECT / AGENT</text>
+        <text class="fg cardT" x="84" y="568" font-size="16">one agent, one key</text>
+        <text class="mut cardB" x="84" y="590">its own credentials and RBAC</text>
+      </g>
+      <g id="c2">
+        <rect x="356" y="514" width="270" height="94" rx="9" fill="#0E1116" stroke="#7FAF5A" stroke-opacity="0.5"/>
+        <text class="acS mono" x="374" y="540" font-size="13">OBJECT / ENSEMBLE</text>
+        <text class="fg cardT" x="374" y="568" font-size="16">the team as a pack</text>
+        <text class="mut cardB" x="374" y="590">stamps out Agents and memory</text>
+      </g>
+      <g id="c3">
+        <rect x="646" y="514" width="270" height="94" rx="9" fill="#0E1116" stroke="#7FAF5A" stroke-opacity="0.5"/>
+        <text class="acS mono" x="664" y="540" font-size="13">OBJECT / POLICY</text>
+        <text class="fg cardT" x="664" y="568" font-size="16">rules reviewed like code</text>
+        <text class="mut cardB" x="664" y="590">tool gating, egress, Secrets</text>
+      </g>
+      <g id="c4">
+        <rect x="936" y="514" width="278" height="94" rx="9" fill="#0E1116" stroke="#7FAF5A" stroke-opacity="0.5"/>
+        <text class="acS mono" x="954" y="540" font-size="13">OBJECT / AGENTRUN</text>
+        <text class="fg cardT" x="954" y="568" font-size="16">a run you can audit</text>
+        <text class="mut cardB" x="954" y="590">trace ID, tokens, cost</text>
+        <circle class="gear acS" cx="1184" cy="535" r="4.5"/>
+      </g>
+    </g>
+
+    <!-- ============ BOUNDARY ============ -->
+    <g id="boundary">
+      <text class="h2 mut mono" x="56" y="652">WHAT IT LEAVES ALONE</text>
+      <text class="mut" x="56" y="678" font-size="14">placement belongs to llmfit-dra, a DRA driver;</text>
+      <text class="mut" x="56" y="698" font-size="14">serving belongs to vLLM / SGLang / llama.cpp</text>
+    </g>
+
+    <!-- ============ VERDICT ============ -->
+    <g id="verdict">
+      <rect x="620" y="644" width="5" height="56" class="ac"/>
+      <text id="verdictA" class="verdict fg" x="646" y="666">agents don't need better prompts &#8212;</text>
+      <text id="verdictB" class="verdict fg" x="646" y="692">they need shared awareness</text>
+    </g>
+
+    <text class="srcnote mut mono" x="1120" y="698" font-size="11">source: README</text>
+  </g>
+</svg>
