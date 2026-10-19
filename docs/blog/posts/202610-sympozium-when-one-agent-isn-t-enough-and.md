@@ -9,7 +9,7 @@ Give one language model a prompt and a couple of tools and it will do something 
 
 It is MIT licensed, under active development (its README warns plainly that APIs will change and things will break), and comes from the creator of k8sgpt and llmfit. Its one-line thesis is also its design brief: agents don't need better prompts, they need shared situational awareness.
 
-![Sympozium: When One Agent Isn't Enough, and Prompts Aren't the Problem - svg wide](/img/sympozium-when-one-agent-isn-t-enough-and-svg_wide.svg){ width="80%" }
+![Sympozium: When One Agent Isn't Enough, and Prompts Aren't the Problem - svg wide](/img/sympozium-when-one-agent-isn-t-enough-and-svg_wide.svg?v=f0f39a9){ width="80%" }
 
 ## Why agents end up on Kubernetes
 
