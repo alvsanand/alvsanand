@@ -1,0 +1,284 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="t d">
+  <title id="t">Sympozium: agent plumbing as Kubernetes primitives</title>
+  <desc id="d">Three declared custom resources — AgentRun, SympoziumPolicy and SympoziumSchedule — map onto Kubernetes Job, admission webhook and CronJob, wired by one controller that loops back to reconcile.</desc>
+
+  <style>
+    @keyframes camdrift {
+      0%   { transform: translate3d(0,0,0) scale(1.015); }
+      50%  { transform: translate3d(-0.35%,-0.25%,0) scale(1.028); }
+      100% { transform: translate3d(0,0,0) scale(1.015); }
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes breathe {
+      0%,100% { opacity: .55; }
+      50%     { opacity: .95; }
+    }
+    @keyframes sheen {
+      0%   { transform: translateX(-120%); opacity: 0; }
+      18%  { opacity: .5; }
+      60%  { opacity: 0; }
+      100% { transform: translateX(320%); opacity: 0; }
+    }
+
+    /* plane A — the three declared resources, stagger 0.0 / 0.55 / 1.1 */
+    @keyframes riseA {
+      0%   { opacity: 0; transform: translateY(22px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .res { opacity: 0; animation: riseA .95s cubic-bezier(.22,.9,.24,1) forwards; }
+    .r1 { animation-delay: .35s; }
+    .r2 { animation-delay: .90s; }
+    .r3 { animation-delay: 1.45s; }
+
+    /* plane B — the Kubernetes primitives they become */
+    @keyframes riseB {
+      0%   { opacity: 0; transform: translateY(18px) scale(.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .prim { opacity: 0; animation: riseB .9s cubic-bezier(.22,.9,.24,1) forwards; }
+    .p1 { animation-delay: 1.05s; }
+    .p2 { animation-delay: 1.60s; }
+    .p3 { animation-delay: 2.15s; }
+
+    /* connector dashes draw once, then keep flowing */
+    @keyframes drawDown {
+      0%   { stroke-dashoffset: 150; opacity: 0; }
+      30%  { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes drawWire {
+      0%   { stroke-dashoffset: 344; opacity: 0; }
+      40%  { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes flowDown {
+      to { stroke-dashoffset: -300; }
+    }
+    .wire { stroke-dasharray: 344; stroke-dashoffset: 344; opacity: 0; animation: drawWire .8s cubic-bezier(.35,.7,.25,1) forwards; }
+    /* each wire starts only after BOTH its boxes are past half-opacity:
+       res .35/.90/1.45 + .95s  |  prim 1.05/1.60/2.15 + .90s */
+    .w1 { animation-delay: 1.72s; }
+    .w2 { animation-delay: 2.27s; }
+    .w3 { animation-delay: 2.82s; }
+    /* arrows into the controller plane: after .ctrl (2.85s + 1.05s) */
+    .wplane { animation-delay: 3.30s; }
+    .flow { opacity: 0; animation: breathe 3.2s ease-in-out infinite; }
+    .f1 { animation-delay: 2.52s; }
+    .f2 { animation-delay: 3.07s; }
+    .f3 { animation-delay: 3.62s; }
+
+    /* the controller plane arrives last, then idles */
+    @keyframes planeIn {
+      0%   { opacity: 0; transform: translateY(26px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .ctrl { opacity: 0; animation: planeIn 1.05s cubic-bezier(.22,.9,.24,1) 2.85s forwards; }
+
+    @keyframes strokeIn {
+      0%   { stroke-dashoffset: 900; opacity: 0; }
+      35%  { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    .loop { stroke-dasharray: 900; stroke-dashoffset: 900; opacity: 0; animation: strokeIn 1.4s cubic-bezier(.35,.7,.25,1) 3.60s forwards; }
+    .flowLoop { opacity: 0; animation: breathe 3.4s ease-in-out 5.05s infinite; }
+
+    @keyframes pulseOnce {
+      0%   { opacity: 0; transform: scale(.6); }
+      45%  { opacity: .55; transform: scale(1.25); }
+      100% { opacity: 0; transform: scale(1.85); }
+    }
+    .ring { opacity: 0; animation: pulseOnce 2.6s ease-out infinite; }
+    .g1 { animation-delay: 3.75s; }
+    .g2 { animation-delay: 5.05s; }
+
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .cap { opacity: 0; animation: fadeUp .9s ease-out forwards; }
+    .c1 { animation-delay: .9s; }
+    .c2 { animation-delay: 1.6s; }
+    .c3 { animation-delay: 2.3s; }
+
+    .sheen-bar { animation: sheen 6.5s cubic-bezier(.3,.6,.3,1) 1.2s infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .001s !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="0.55" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#121821"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#18202B"/>
+      <stop offset="1" stop-color="#121821"/>
+    </linearGradient>
+    <linearGradient id="ctrlGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#141C15"/>
+      <stop offset="0.5" stop-color="#18241A"/>
+      <stop offset="1" stop-color="#141C15"/>
+    </linearGradient>
+    <linearGradient id="sheenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A3CF7A" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A3CF7A" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#A3CF7A" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#F4F2EC" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <clipPath id="frameClip"><rect width="1280" height="720"/></clipPath>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#7FAF5A" fill-opacity="0.9"/>
+    </marker>
+  </defs>
+
+  <g clip-path="url(#frameClip)">
+    <g style="animation: camdrift 14s ease-in-out infinite; transform-origin: 640px 360px;">
+      <rect width="1280" height="720" fill="url(#bg)"/>
+      <rect width="1280" height="720" fill="url(#grid)"/>
+
+      <!-- ambient glow behind the controller plane -->
+      <ellipse cx="640" cy="612" rx="420" ry="120" fill="#5E8A3F" fill-opacity="0.10" style="animation: breathe 6.5s ease-in-out infinite;"/>
+
+      <!-- ───────── header ───────── -->
+      <g>
+        <rect x="64" y="44" width="10" height="10" fill="#7FAF5A" style="animation: breathe 3.4s ease-in-out infinite;"/>
+        <text x="88" y="54" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" letter-spacing="2.4" fill="#A3CF7A">SYMPOZIUM · KUBERNETES-NATIVE</text>
+      </g>
+      <text x="64" y="106" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="38" font-weight="700" fill="#F4F2EC" letter-spacing="-0.5">Your agent plumbing, as resources you already run</text>
+
+      <!-- column captions -->
+      <g class="cap c1">
+        <text x="64" y="170" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12.5" letter-spacing="2" fill="rgba(244,242,236,0.55)">YOU DECLARE</text>
+      </g>
+      <g class="cap c2">
+        <text x="966" y="170" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12.5" letter-spacing="2" fill="rgba(244,242,236,0.55)">KUBERNETES OWNS IT</text>
+      </g>
+
+      <!-- ───────── left column: three custom resources ───────── -->
+      <!-- row 1 · AgentRun -->
+      <g class="res r1">
+        <rect x="64" y="196" width="388" height="96" rx="12" fill="url(#card)" stroke="#7FAF5A" stroke-opacity="0.42" stroke-width="1.5"/>
+        <rect x="64" y="196" width="4" height="96" rx="2" fill="#A3CF7A"/>
+        <text x="88" y="226" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">kind: AgentRun</text>
+        <text x="88" y="258" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600" fill="#F4F2EC">One task, one run</text>
+        <text x="88" y="280" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">agentRef · task · timeout</text>
+      </g>
+      <!-- row 2 · SympoziumPolicy -->
+      <g class="res r2">
+        <rect x="64" y="316" width="388" height="96" rx="12" fill="url(#card)" stroke="#7FAF5A" stroke-opacity="0.42" stroke-width="1.5"/>
+        <rect x="64" y="316" width="4" height="96" rx="2" fill="#A3CF7A"/>
+        <text x="88" y="346" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">kind: SympoziumPolicy</text>
+        <text x="88" y="378" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600" fill="#F4F2EC">Which tools are legal</text>
+        <text x="88" y="400" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">policyRef · toolsAllow</text>
+      </g>
+      <!-- row 3 · SympoziumSchedule -->
+      <g class="res r3">
+        <rect x="64" y="436" width="388" height="96" rx="12" fill="url(#card)" stroke="#7FAF5A" stroke-opacity="0.42" stroke-width="1.5"/>
+        <rect x="64" y="436" width="4" height="96" rx="2" fill="#A3CF7A"/>
+        <text x="88" y="466" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">kind: SympoziumSchedule</text>
+        <text x="88" y="498" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600" fill="#F4F2EC">When it fires alone</text>
+        <text x="88" y="520" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">cron: 0 * * * *</text>
+      </g>
+
+      <!-- ───────── right column: the primitives, one per row, same baselines ───────── -->
+      <g class="prim p1">
+        <rect x="812" y="196" width="404" height="96" rx="12" fill="url(#card)" stroke="#A3CF7A" stroke-opacity="0.55" stroke-width="1.5"/>
+        <text x="836" y="226" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">batch/v1 · Job</text>
+        <text x="836" y="258" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="600" fill="#F4F2EC">A pod per run</text>
+        <text x="836" y="280" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">status.result, then GC</text>
+        <circle cx="1188" cy="218" r="5" fill="#A3CF7A" style="animation: breathe 3s ease-in-out infinite;"/>
+      </g>
+      <g class="prim p2">
+        <rect x="812" y="316" width="404" height="96" rx="12" fill="url(#card)" stroke="#A3CF7A" stroke-opacity="0.55" stroke-width="1.5"/>
+        <text x="836" y="346" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">admission webhook</text>
+        <text x="836" y="378" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="600" fill="#F4F2EC">Verdict before start</text>
+        <text x="836" y="400" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">admit, or reject the run</text>
+        <circle cx="1188" cy="338" r="5" fill="#A3CF7A" style="animation: breathe 3.8s ease-in-out .4s infinite;"/>
+      </g>
+      <g class="prim p3">
+        <rect x="812" y="436" width="404" height="96" rx="12" fill="url(#card)" stroke="#A3CF7A" stroke-opacity="0.55" stroke-width="1.5"/>
+        <text x="836" y="466" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing="1.6" fill="rgba(244,242,236,0.55)">batch/v1 · CronJob</text>
+        <text x="836" y="498" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="600" fill="#F4F2EC">The clock, handled</text>
+        <text x="836" y="520" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="rgba(244,242,236,0.6)">fires the Job on schedule</text>
+        <circle cx="1188" cy="458" r="5" fill="#A3CF7A" style="animation: breathe 4.4s ease-in-out .8s infinite;"/>
+      </g>
+
+      <!-- ───────── connectors: three straight arrows, each into its own node ───────── -->
+      <g stroke="#7FAF5A" stroke-width="2" stroke-linecap="round" fill="none">
+        <path class="wire w1" d="M456 244 H 800" marker-end="url(#arrow)"/>
+        <path class="wire w2" d="M456 364 H 800" marker-end="url(#arrow)"/>
+        <path class="wire w3" d="M456 484 H 800" marker-end="url(#arrow)"/>
+      </g>
+      <g stroke="#A3CF7A" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="3 9">
+        <path class="flow f1" d="M456 244 H 800"/>
+        <path class="flow f2" d="M456 364 H 800"/>
+        <path class="flow f3" d="M456 484 H 800"/>
+      </g>
+
+      <!-- small mapping tags on the wires, so each pair reads at a glance -->
+      <g class="cap c3" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" letter-spacing="1.2" fill="rgba(244,242,236,0.45)">
+        <text x="628" y="236" text-anchor="middle">becomes</text>
+        <text x="628" y="356" text-anchor="middle">checked by</text>
+        <text x="628" y="476" text-anchor="middle">becomes</text>
+      </g>
+
+      <!-- ───────── bottom: one controller plane ───────── -->
+      <g class="ctrl">
+        <rect x="64" y="596" width="1152" height="88" rx="14" fill="url(#ctrlGrad)" stroke="#7FAF5A" stroke-opacity="0.7" stroke-width="1.8"/>
+        <clipPath id="planeClip"><rect x="64" y="596" width="1152" height="88" rx="14"/></clipPath>
+        <g clip-path="url(#planeClip)">
+          <rect class="sheen-bar" x="-260" y="596" width="260" height="88" fill="url(#sheenGrad)"/>
+        </g>
+
+        <g transform="translate(112,640)">
+          <circle r="22" fill="none" stroke="#7FAF5A" stroke-opacity="0.45" stroke-width="1.5"/>
+          <g style="transform-origin: 0 0; animation: spin 9s linear infinite;">
+            <path d="M -11 -6 A 13 13 0 1 1 11 -6" fill="none" stroke="#A3CF7A" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 11 -12 L 11 -6 L 5 -6" fill="none" stroke="#A3CF7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </g>
+        <circle class="ring g1" cx="112" cy="640" r="22" fill="none" stroke="#A3CF7A" stroke-width="1.5"/>
+        <circle class="ring g2" cx="112" cy="640" r="22" fill="none" stroke="#A3CF7A" stroke-width="1.5"/>
+
+        <text x="156" y="634" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="700" fill="#F4F2EC">The controller does the wiring</text>
+        <text x="156" y="658" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12.5" fill="rgba(244,242,236,0.62)">sympozium-system · watches CRDs, creates Jobs</text>
+
+        <text x="1188" y="634" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12.5" letter-spacing="1.4" fill="rgba(244,242,236,0.5)">CRD → controller → Job</text>
+        <text x="1188" y="658" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12.5" letter-spacing="1.4" fill="#A3CF7A">no application code</text>
+      </g>
+
+      <!-- declared CRDs feed the controller: three arrows down from the CRD column -->
+      <g stroke="#7FAF5A" stroke-width="2" stroke-linecap="round" fill="none" stroke-opacity="0.55">
+        <path class="wire wplane" d="M 200 532 V 588" marker-end="url(#arrow)"/>
+        <path class="wire wplane" d="M 258 532 V 588" marker-end="url(#arrow)" stroke-opacity="0.35"/>
+        <path class="wire wplane" d="M 316 532 V 588" marker-end="url(#arrow)" stroke-opacity="0.35"/>
+      </g>
+      <g stroke="#A3CF7A" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="2 8">
+        <path class="flow f2" d="M 200 532 V 588" style="animation-delay: 4.10s;"/>
+        <path class="flow f3" d="M 258 532 V 588" style="animation-delay: 4.35s;"/>
+        <path class="flow f1" d="M 316 532 V 588" style="animation-delay: 4.60s;"/>
+      </g>
+      <text x="200" y="560" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" letter-spacing="1.1" fill="rgba(244,242,236,0.42)" text-anchor="middle" opacity="0" style="animation: fadeUp .8s ease-out 3.6s forwards;">declared</text>
+
+      <!-- .status chip: sits above the controller plane, to the left of the feedback path -->
+      <g opacity="0" style="animation: fadeUp .7s ease-out 2.30s forwards;">
+        <rect x="972" y="548" width="96" height="28" rx="8" fill="#141C15" stroke="#7FAF5A" stroke-opacity="0.6" stroke-width="1.4"/>
+        <text x="1020" y="567" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11.5" letter-spacing="0.8" fill="#F4F2EC">.status</text>
+      </g>
+      <!-- label sits BELOW the chip and BELOW the feedback line, right-aligned, clear of both -->
+      <text x="956" y="567" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" letter-spacing="1.1" fill="rgba(244,242,236,0.5)" opacity="0" style="animation: fadeUp .7s ease-out 4.05s forwards;">status written back</text>
+
+      <!-- feedback arc: a full curved connector from the CronJob/Job stack down and back to .status.
+           Drawn after the plane (3.05s) so its head always has a visible line under it. -->
+      <g fill="none" stroke-linecap="round">
+        <path class="loop" d="M 1216 484 Q 1248 484 1248 520 V 548 Q 1248 562 1234 562 H 1076" stroke="#7FAF5A" stroke-opacity="0.7" stroke-width="2" marker-end="url(#arrow)"/>
+        <path class="flowLoop" d="M 1216 484 Q 1248 484 1248 520 V 548 Q 1248 562 1234 562 H 1076" stroke="#A3CF7A" stroke-width="2" stroke-dasharray="2 9"/>
+      </g>
+    </g>
+  </g>
+</svg>

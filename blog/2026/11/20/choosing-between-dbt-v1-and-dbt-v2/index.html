@@ -1,0 +1,880 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is the personal blog of Alvaro Santos">
+      
+      
+        <meta name="author" content="Alvaro Santos Andres">
+      
+      
+        <link rel="canonical" href="https://alvsanand.com/blog/2026/11/20/choosing-between-dbt-v1-and-dbt-v2/">
+      
+      
+        <link rel="prev" href="../../10/run-your-first-sympozium-agent-with-kubectl/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Choosing Between dbt v1 and dbt v2 - alvsanand.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="alvsanand.com" class="md-header__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            alvsanand.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Choosing Between dbt v1 and dbt v2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="alvsanand.com" class="md-nav__button md-logo" aria-label="alvsanand.com" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M399.8 362.2c29.5-34.7 47.1-78.3 47.1-125.8 0-113-99.6-204.4-222.5-204.4S2 123.5 2 236.4s99.6 204.5 222.5 204.5c27 0 53.9-4.5 79.4-13.4 1.4-.5 3-.5 4.5-.1s2.7 1.4 3.6 2.6c18.6 25.1 47.6 42.7 79.9 49.9 1.1.2 2.3 0 3.3-.6s1.7-1.6 1.9-2.8c.1-.6.1-1.3 0-1.9s-.4-1.2-.8-1.7c-12.3-16-18.7-35.8-18-56s8.4-39.5 21.7-54.7l-.2.1zM330 212.4l-57.3 43.5 20.8 68.9c.4 1.3.4 2.7-.1 4s-1.2 2.4-2.3 3.2-2.4 1.2-3.8 1.2-2.7-.4-3.8-1.2l-59.1-41-59.1 41.1c-1.1.8-2.4 1.2-3.8 1.2s-2.7-.4-3.8-1.2-1.9-1.9-2.3-3.2-.5-2.7-.1-4l20.8-68.9-57.3-43.5c-1.1-.8-1.9-1.9-2.3-3.2s-.4-2.7 0-4 1.2-2.4 2.3-3.2 2.4-1.3 3.7-1.3l71.9-1.5 23.7-67.9c.4-1.3 1.3-2.4 2.4-3.2s2.4-1.2 3.8-1.2 2.7.4 3.8 1.2 1.9 1.9 2.4 3.2l23.7 67.9 71.9 1.5c1.4 0 2.7.4 3.8 1.2s1.9 1.9 2.3 3.2.4 2.7 0 4-1.2 2.4-2.3 3.3z"></path></svg>
+
+    </a>
+    alvsanand.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/datahublocal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datahub.local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/oss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/734567?v=4" alt="Alvaro Santos Andres">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Alvaro Santos Andres
+                        
+                      </strong>
+                      <br>
+                      Data Solution Architrect
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
+                        <time datetime="2026-11-20 00:00:00+00:00" class="md-ellipsis">November 20, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"></path></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/general/">General</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="choosing-between-dbt-v1-and-dbt-v2">Choosing Between dbt v1 and dbt v2</h1>
+<p>dbt has spent roughly five years as a 1.x product. The v1.0 release landed on December 3, 2021, and the series rolled through thirteen minor versions since — the version selector in the docs today lists 1.12 as the latest stable and 1.13 in beta. Along the way it picked up a community of over 100,000 members and became, in its own words, the industry standard for data transformation: you write SQL <code>select</code> statements, and the tool handles materialization, transactions, DDL and schema changes in your warehouse.</p>
+<p>On September 14, 2026, dbt Labs shipped v2.0, and this release is not another minor bump. The engine is rewritten in Rust with a native understanding of SQL across warehouse dialects, and the surrounding product has been reorganized around AI: dbt Wizard investigates, builds, validates and ships from natural language, grounded in the lineage, tests, contracts and metrics your project already produces. dbt Labs frames the structured context a dbt project creates — how your data connects, what it means, what a change may affect — as exactly what an AI agent needs to work safely. That framing, plus a changed license, is why v2 deserves a deliberate look rather than an automatic upgrade.</p>
+<p>This article compares the two generations on the dimensions that actually decide the choice: runtime, install defaults, editor tooling, licensing and support timelines. By the end you should be able to name which generation fits your constraints, and know the migration path if you pick v2.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/img/choosing-between-dbt-v1-and-dbt-v2-figure_1.svg" data-desc-position="bottom"><img alt="Evolution of dbt: v1 to v2 and the Fivetran merger" src="/img/choosing-between-dbt-v1-and-dbt-v2-figure_1.svg"></a></p>
+<h2 id="two-generations-of-the-same-framework">Two generations of the same framework</h2>
+<p>Both versions speak the same dbt language: SQL select statements, Jinja templating, YAML configs and tests, the code you actually write. Both compile that project, execute the transformation graph, and produce metadata. The split is in the engine underneath.</p>
+<p>v1 is the original Python-based CLI, released under the Apache 2.0 license, still maintained on the 1.x series. v2 is the current Rust-based generation and the default when you install dbt. The licensing page is blunt about what changed: dbt v2 is proprietary to dbt Labs under the dbt Product Licensing Agreement, though it remains completely free to use, and a fully open-source Apache 2.0 distribution of the same Rust engine ships as <code>dbt-oss</code>. So "is v2 open source?" has a two-part answer: the recommended <code>dbt</code> package is not, and the <code>dbt-oss</code> package is.</p>
+<p>The upgrade guide describes v2 as "faster and stricter, but your existing project language and DAG semantics carry over, so once you upgrade, your project works as before — just faster." Stricter is the operative word: v2 drops all deprecated functionality, so every deprecation warning in your project must be resolved before the new engine will run it.</p>
+<h2 id="the-dimensions-that-decide">The dimensions that decide</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>dbt v1</th>
+<th>dbt v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runtime</td>
+<td>Python-based</td>
+<td>Rust-based</td>
+</tr>
+<tr>
+<td>License</td>
+<td>Apache 2.0</td>
+<td>Proprietary (dbt Product Licensing Agreement); <code>dbt-oss</code> distribution is Apache 2.0</td>
+</tr>
+<tr>
+<td>Install default</td>
+<td>Separate v1.x install</td>
+<td><code>python -m pip install dbt</code> gives you v2 by default</td>
+</tr>
+<tr>
+<td>Initial release</td>
+<td>Dec 3, 2021 (v1.0)</td>
+<td>Sept 14, 2026 (v2.0)</td>
+</tr>
+<tr>
+<td>Support</td>
+<td>v1.3–v1.7 removed from dbt platform on Feb 28, 2027; v1 overall "still fully supported"</td>
+<td>Active support through Sept 13, 2027</td>
+</tr>
+<tr>
+<td>Editor features</td>
+<td>dbt VS Code extension available</td>
+<td>Extension plus SQL comprehension, lint, column-level lineage</td>
+</tr>
+<tr>
+<td>Platform sign-in</td>
+<td>Not required</td>
+<td>Unlocks some capabilities with a free dbt platform account</td>
+</tr>
+</tbody>
+</table>
+<p>One install detail worth knowing: <code>dbt-oss</code> and <code>dbt</code> cannot share a Python environment, so test them in separate virtual environments if you want to compare.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/img/choosing-between-dbt-v1-and-dbt-v2-svg_wide.svg" data-desc-position="bottom"><img alt="The dimensions that decide" src="/img/choosing-between-dbt-v1-and-dbt-v2-svg_wide.svg" width="80%"></a></p>
+</figure>
+<h2 id="where-v2-earns-its-keep">Where v2 earns its keep</h2>
+<p>The Rust engine's SQL comprehension is the headline, and it shows up as four things you notice in the first hour:</p>
+<ul>
+<li>Incorrect SQL is caught in your models before it ever hits the warehouse — syntax error detection across Jinja, YAML and SQL, marked "free forever" on the feature availability page.</li>
+<li>Autocomplete, hover info and inline errors as you type, through the dbt VS Code extension.</li>
+<li>Inline CTE previews for faster debugging, part of the LSP feature set (Language Server Protocol, the same editor-integration standard your IDE uses elsewhere).</li>
+<li>Tracing of model and column definitions across the entire project, including precise column-level lineage in the full version of dbt docs v2.</li>
+</ul>
+<p>Some of this list is free without any account: syntax error detection, <code>dbt lint</code>, dbt docs v2 lite, and the lite LSP (go-to ref, source and macro). The fuller capabilities — the Catalog tab in the editor, full LSP features — arrive when you run <code>dbt login</code> and sign in with a free dbt platform account. None of it requires a paid plan.</p>
+<h2 id="where-v2-costs-you">Where v2 costs you</h2>
+<p>The first cost is legal rather than technical. If your organization's license policy requires a strict open-source distribution, the recommended <code>dbt</code> package is off the table; you install <code>dbt-oss</code> instead, which the licensing page positions for exactly that requirement or for building custom work on the OSS code itself.</p>
+<p>The second cost is migration effort on an existing project. All deprecation warnings — including historic ones and new ones as of dbt v1.10 — must be resolved before upgrading. Behavior change flags marked <code>2.0</code> are removed, meaning the new behavior is always enabled and you can no longer opt out via <code>flags:</code> in <code>dbt_project.yml</code>. External packages may not have updated their <code>require-dbt-version</code> to include <code>2.0.0</code> yet. The docs describe the work as "simple, straightforward, and in many cases, auto-fixable" with the <code>dbt-autofix</code> helper, but it is work.</p>
+<p>The mitigation is well designed: v2 produces a <code>v12</code> manifest that v1 safely ignores, so you can run the two versions side by side and migrate incrementally without breaking existing v1 jobs. If you are on v1.12, you can even test parser compatibility first with the opt-in <code>--use-v2-parser</code> flag, which delegates only parsing to the v2 engine.</p>
+<h2 id="who-should-pick-which">Who should pick which</h2>
+<p>Three situations cover most readers.</p>
+<p><strong>Starting a new project today.</strong> Install v2. Run <code>python -m pip install dbt</code>, verify with <code>dbt --version</code>, then <code>dbt login</code> if you want the platform-gated features. There is no reason to begin on v1, and dbt Labs says new capabilities will land in v2 only over time.</p>
+<p><strong>The strict-OSS shop.</strong> Your license policy decides for you. The choice is <code>dbt-oss</code> for v2 or staying on v1, which remains Apache 2.0 and fully supported. Only you can weigh "still supported" against a deprecation date the docs do not yet state for v1 overall — they do state that v1.3 through v1.7 leave the dbt platform on February 28, 2027.</p>
+<p><strong>A large v1 estate.</strong> Old deprecations and third-party packages make v1 a defensible answer this year. Plan the move anyway: use <code>--use-v2-parser</code> to find your compatibility gaps early, run the versions side by side, and treat <code>dbt-autofix</code> as the tool that turns the migration into an afternoon rather than a quarter.</p>
+<p>The page that continues this work is the upgrade guide: https://docs.getdbt.com/docs/dbt-versions/dbt-upgrade/upgrading-to-v2</p>
+<p>Source: https://docs.getdbt.com/docs/introduction?version=2</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy", "content.tooltips", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
