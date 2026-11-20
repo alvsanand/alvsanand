@@ -11,7 +11,7 @@ On September 14, 2026, dbt Labs shipped v2.0, and this release is not another mi
 
 This article compares the two generations on the dimensions that actually decide the choice: runtime, install defaults, editor tooling, licensing and support timelines. By the end you should be able to name which generation fits your constraints, and know the migration path if you pick v2.
 
-![Choosing Between dbt v1 and dbt v2 - svg wide](/img/choosing-between-dbt-v1-and-dbt-v2-svg_wide.svg)
+![Evolution of dbt: v1 to v2 and the Fivetran merger](/img/choosing-between-dbt-v1-and-dbt-v2-figure_1.svg)
 
 ## Two generations of the same framework
 
@@ -36,7 +36,7 @@ The upgrade guide describes v2 as "faster and stricter, but your existing projec
 One install detail worth knowing: `dbt-oss` and `dbt` cannot share a Python environment, so test them in separate virtual environments if you want to compare.
 
 <figure markdown>
-![The dimensions that decide](/img/choosing-between-dbt-v1-and-dbt-v2-figure_1.svg){ width="80%" }
+![The dimensions that decide](/img/choosing-between-dbt-v1-and-dbt-v2-svg_wide.svg){ width="80%" }
 </figure>
 
 ## Where v2 earns its keep
