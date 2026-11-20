@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="t d">
+  <title id="t">Evolution of dbt: v1 to v2 and the Fivetran merger</title>
+  <desc id="d">Three bands on one timeline. dbt v1, Python and Jinja: v1.0 on 3 December 2021 brings production stability and SemVer; v1.5 on 27 April 2023 brings model contracts and dbt Mesh; v1.8 on 9 May 2024 brings unit tests and decoupled adapters. Transition and Fivetran deal: dbt Fusion beta on 28 May 2025 rewrites the engine in Rust; the Fivetran and dbt Labs merger is announced 13 October 2025 and closes 1 June 2026 as dbt v2.0 goes alpha. dbt v2, Rust and Fusion: v1.12 on 16 July 2026 is the bridge to v2 while v2.0 enters beta; v2.0 reaches GA on 14 to 16 September 2026 as the default Rust engine, shipping as both dbt-oss and dbt.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#131A22"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#F4F2EC" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .eyebrow { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace; font-size: 14px; letter-spacing: 3px; fill: #7FAF5A; }
+    .title   { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; font-size: 30px; font-weight: 600; fill: #F4F2EC; }
+    .band    { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace; font-size: 13px; letter-spacing: 1.6px; fill: #A3CF7A; }
+    .band-b  { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace; font-size: 13px; letter-spacing: 1.6px; fill: #7FAF5A; }
+    .date    { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace; font-size: 14px; letter-spacing: 0.4px; fill: #F4F2EC; }
+    .date-on { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace; font-size: 14px; letter-spacing: 0.4px; fill: #A3CF7A; }
+    .head    { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; font-size: 19px; font-weight: 600; fill: #F4F2EC; }
+    .sub     { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; font-size: 16px; fill: rgba(244,242,236,0.75); }
+    .foot    { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; font-size: 18px; fill: rgba(244,242,236,0.75); }
+  </style>
+
+  <!-- ===== background ===== -->
+  <rect x="0" y="0" width="1280" height="720" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="720" fill="url(#grid)" opacity="0.7"/>
+  <rect x="0.75" y="0.75" width="1278.5" height="718.5" fill="none" stroke="#F4F2EC" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- ===== header ===== -->
+  <text x="72" y="52" class="eyebrow">dbt · TIMELINE</text>
+  <text x="72" y="90" class="title">Evolution of dbt, v1 to v2</text>
+
+  <!-- =====================================================================
+       BAND 1 · dbt v1 — Python & Jinja                 rule y=132
+       three events, left to right: x = 96, 456, 816 (cards 328 wide)
+       ===================================================================== -->
+  <line x1="72" y1="132" x2="1208" y2="132" stroke="#7FAF5A" stroke-opacity="0.45" stroke-width="1.6"/>
+  <text x="72" y="122" class="band">① DBT V1 — PYTHON &amp; JINJA</text>
+
+  <circle cx="96" cy="132" r="5" fill="#7FAF5A"/>
+  <text x="96" y="162" class="date">3 DEC 2021</text>
+  <text x="96" y="188" class="head">dbt v1.0</text>
+  <text x="96" y="210" class="sub">Production stability</text>
+  <text x="96" y="230" class="sub">&amp; SemVer</text>
+
+  <circle cx="456" cy="132" r="5" fill="#7FAF5A"/>
+  <text x="456" y="162" class="date">27 APR 2023</text>
+  <text x="456" y="188" class="head">dbt v1.5</text>
+  <text x="456" y="210" class="sub">Model contracts</text>
+  <text x="456" y="230" class="sub">&amp; dbt Mesh</text>
+
+  <circle cx="816" cy="132" r="5" fill="#7FAF5A"/>
+  <text x="816" y="162" class="date">9 MAY 2024</text>
+  <text x="816" y="188" class="head">dbt v1.8</text>
+  <text x="816" y="210" class="sub">Unit tests &amp; decoupled</text>
+  <text x="816" y="230" class="sub">adapters</text>
+
+  <!-- =====================================================================
+       BAND 2 · Transition & Fivetran deal                  rule y=292
+       three events: x = 96, 456, 816
+       ===================================================================== -->
+  <line x1="72" y1="292" x2="1208" y2="292" stroke="#A3CF7A" stroke-opacity="0.55" stroke-width="1.6"/>
+  <text x="72" y="282" class="band-b">② TRANSITION &amp; FIVETRAN DEAL</text>
+
+  <circle cx="96" cy="292" r="5" fill="#A3CF7A"/>
+  <text x="96" y="322" class="date-on">28 MAY 2025</text>
+  <text x="96" y="348" class="head">dbt Fusion beta</text>
+  <text x="96" y="370" class="sub">Rust engine rewrite</text>
+
+  <circle cx="456" cy="292" r="5" fill="#A3CF7A"/>
+  <text x="456" y="322" class="date-on">13 OCT 2025</text>
+  <text x="456" y="348" class="head">Merger announced</text>
+  <text x="456" y="370" class="sub">Fivetran &amp; dbt Labs</text>
+
+  <circle cx="816" cy="292" r="5" fill="#A3CF7A"/>
+  <text x="816" y="322" class="date-on">1 JUN 2026</text>
+  <text x="816" y="348" class="head">Merger closes</text>
+  <text x="816" y="370" class="sub">Fivetran + dbt Labs</text>
+  <text x="816" y="390" class="sub">&amp; dbt v2.0 alpha</text>
+
+  <!-- =====================================================================
+       BAND 3 · dbt v2 — Rust & Fusion                      rule y=452
+       two events: x = 96, 816 (the GA card gets the accent panel)
+       ===================================================================== -->
+  <rect x="800" y="466" width="408" height="146" rx="12" fill="#18202A" stroke="#A3CF7A" stroke-opacity="0.8" stroke-width="1.8"/>
+  <line x1="72" y1="452" x2="1208" y2="452" stroke="#A3CF7A" stroke-opacity="0.8" stroke-width="1.6"/>
+  <text x="72" y="442" class="band-b">③ DBT V2 — RUST &amp; FUSION</text>
+
+  <circle cx="96" cy="452" r="5" fill="#A3CF7A"/>
+  <text x="96" y="482" class="date">16 JUL 2026</text>
+  <text x="96" y="508" class="head">dbt v1.12</text>
+  <text x="96" y="530" class="sub">Bridge to v2</text>
+  <text x="96" y="550" class="sub">&amp; dbt v2.0 beta</text>
+
+  <circle cx="816" cy="452" r="6" fill="#A3CF7A"/>
+  <circle cx="816" cy="452" r="11" fill="none" stroke="#A3CF7A" stroke-opacity="0.3" stroke-width="1.4"/>
+  <text x="832" y="482" class="date-on">14–16 SEPT 2026</text>
+  <text x="832" y="508" class="head">dbt v2.0 GA</text>
+  <text x="832" y="530" class="sub">Default Rust engine</text>
+  <text x="832" y="550" class="sub">shipped as dbt-oss &amp; dbt</text>
+
+  <!-- ===== footer ===== -->
+  <line x1="72" y1="640" x2="1208" y2="640" stroke="#F4F2EC" stroke-opacity="0.13" stroke-width="1.2"/>
+  <text x="72" y="670" class="foot">The same language across all of it: Python to Rust, proprietary to dual distribution.</text>
+</svg>

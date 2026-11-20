@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Comparison of three dbt distributions: v2, dbt OSS and v1">
+  <title>Three ways to run dbt: v2, dbt OSS, v1</title>
+  <desc>A diagram comparing dbt v2 (Rust engine, proprietary licence), dbt OSS (Rust, Apache 2.0, fewer features) and dbt v1 (Python, Apache 2.0, maintenance only), all running the same dbt language.</desc>
+
+  <style>
+    :root {
+      --bg: #0E1116;
+      --text: #F4F2EC;
+      --muted: rgba(244, 242, 236, 0.75);
+      --accent: #7FAF5A;
+      --accent-strong: #A3CF7A;
+      --accent-deep: #5E8A3F;
+    }
+    .sans { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace; }
+
+    /* ---- continuous camera drift (never stops) ---- */
+    #camera { animation: camDrift 22s ease-in-out infinite alternate; transform-origin: 640px 360px; }
+    @keyframes camDrift {
+      0%   { transform: scale(1.0) translate(0px, 0px); }
+      100% { transform: scale(1.035) translate(-8px, 5px); }
+    }
+
+    /* ---- shared reveal ---- */
+    .reveal { opacity: 0; animation-name: rise; animation-timing-function: cubic-bezier(.2,.75,.2,1); animation-fill-mode: forwards; }
+    .reveal-late { opacity: 0; animation-name: softIn; animation-timing-function: ease-out; animation-fill-mode: forwards; }
+
+    @keyframes rise {
+      0%   { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes softIn {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* ---- arrows draw on ---- */
+    .arrow-draw { stroke-dasharray: 60; stroke-dashoffset: 60; animation-name: draw; animation-timing-function: ease-out; animation-fill-mode: forwards; }
+    @keyframes draw {
+      0%   { stroke-dashoffset: 60; opacity: 0; }
+      15%  { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    /* ---- idle breathe on the accents ---- */
+    .sheen { animation: sheen 5.5s ease-in-out infinite alternate; }
+    @keyframes sheen {
+      0%   { opacity: 0.55; }
+      100% { opacity: 1; }
+    }
+
+    .cardGlow { animation: glow 7s ease-in-out infinite alternate; }
+    @keyframes glow {
+      0%   { opacity: 0.35; }
+      100% { opacity: 0.75; }
+    }
+
+    /* ---- scanning line across the whole diagram, slow ---- */
+    .scan { animation: scan 9s linear infinite; }
+    @keyframes scan {
+      0%   { transform: translateX(-40px); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateX(1240px); opacity: 0; }
+    }
+
+    /* ---- the shared language band pulses gently ---- */
+    .bandPulse { animation: bandPulse 6s ease-in-out infinite alternate; transform-origin: 640px 176px; }
+    @keyframes bandPulse {
+      0%   { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(1.008); opacity: 1; }
+    }
+
+    .chipIn { opacity: 0; animation-name: chipIn; animation-timing-function: cubic-bezier(.2,.8,.2,1); animation-fill-mode: forwards; }
+    @keyframes chipIn {
+      0%   { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .reveal, .reveal-late, .chipIn, .arrow-draw { opacity: 1; stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <rect width="1280" height="720" fill="#0E1116"/>
+  <g id="camera">
+
+    <!-- ============ header ============ -->
+    <g class="reveal" style="animation-duration:900ms; animation-delay:0ms">
+      <text x="64" y="72" class="sans" font-size="13" letter-spacing="3.2" fill="rgba(244,242,236,0.75)">DBT &#183; THREE DISTRIBUTIONS</text>
+      <rect x="64" y="88" width="34" height="2" fill="#7FAF5A" class="sheen"/>
+    </g>
+
+    <g class="reveal" style="animation-duration:900ms; animation-delay:120ms">
+      <text x="64" y="128" class="sans" font-size="40" font-weight="600" fill="#F4F2EC">Same language. Three engines.</text>
+    </g>
+
+    <!-- ============ shared language band ============ -->
+    <g class="bandPulse reveal" style="animation-duration:800ms; animation-delay:600ms">
+      <rect x="64" y="150" width="1152" height="52" rx="10" fill="#12171E" stroke="rgba(127,175,90,0.45)" stroke-width="1"/>
+      <text x="92" y="182" class="sans" font-size="16" font-weight="500" fill="#F4F2EC">The dbt framework</text>
+      <text x="298" y="182" class="mono" font-size="13" fill="rgba(244,242,236,0.75)">SQL &#183; Jinja &#183; YAML &#183; tests</text>
+      <text x="1130" y="182" text-anchor="end" class="sans" font-size="12" letter-spacing="2" fill="#A3CF7A">SHARED</text>
+    </g>
+
+    <!-- fan-out connectors -->
+    <g fill="none" stroke="rgba(127,175,90,0.7)" stroke-width="1.6" stroke-linecap="round">
+      <path class="arrow-draw" style="animation-duration:700ms; animation-delay:950ms" d="M230 206 L230 262"/>
+      <path class="arrow-draw" style="animation-duration:700ms; animation-delay:1030ms" d="M640 206 L640 262"/>
+      <path class="arrow-draw" style="animation-duration:700ms; animation-delay:1110ms" d="M1050 206 L1050 262"/>
+    </g>
+    <g fill="#A3CF7A" opacity="0">
+      <path class="softIn" style="animation-duration:400ms; animation-delay:1500ms; animation-fill-mode:forwards" d="M230 270 l-5 -8 h10 z"/>
+      <path class="softIn" style="animation-duration:400ms; animation-delay:1580ms; animation-fill-mode:forwards" d="M640 270 l-5 -8 h10 z"/>
+      <path class="softIn" style="animation-duration:400ms; animation-delay:1660ms; animation-fill-mode:forwards" d="M1050 270 l-5 -8 h10 z"/>
+    </g>
+
+    <!-- ============ column labels ============ -->
+    <g class="mono" font-size="12" letter-spacing="1.5">
+      <text x="80" y="252" fill="rgba(244,242,236,0.75)" opacity="0" class="softIn" style="animation-duration:600ms; animation-delay:1400ms; animation-fill-mode:forwards">01</text>
+      <text x="490" y="252" fill="rgba(244,242,236,0.75)" opacity="0" class="softIn" style="animation-duration:600ms; animation-delay:1480ms; animation-fill-mode:forwards">02</text>
+      <text x="900" y="252" fill="rgba(244,242,236,0.75)" opacity="0" class="softIn" style="animation-duration:600ms; animation-delay:1560ms; animation-fill-mode:forwards">03</text>
+    </g>
+
+    <!-- ============ card 1 : v2 ============ -->
+    <g class="reveal" style="animation-duration:850ms; animation-delay:1350ms">
+      <rect x="64" y="282" width="332" height="330" rx="14" fill="#141A22"/>
+      <rect x="64" y="282" width="332" height="330" rx="14" fill="none" stroke="#7FAF5A" stroke-width="1.6" class="cardGlow"/>
+      <rect x="64" y="282" width="4" height="330" rx="2" fill="#A3CF7A" class="sheen"/>
+
+      <text x="92" y="322" class="sans" font-size="26" font-weight="600" fill="#F4F2EC">v2</text>
+      <rect x="140" y="302" width="112" height="24" rx="12" fill="rgba(127,175,90,0.16)" stroke="#7FAF5A" stroke-width="1"/>
+      <text x="196" y="319" text-anchor="middle" class="mono" font-size="11" fill="#A3CF7A">DEFAULT INSTALL</text>
+
+      <text x="92" y="356" class="sans" font-size="13" fill="rgba(244,242,236,0.75)">Rust engine, SQL comprehension</text>
+
+      <line x1="92" y1="376" x2="368" y2="376" stroke="rgba(244,242,236,0.14)" stroke-width="1"/>
+
+      <g class="sans" font-size="13.5" fill="#F4F2EC">
+        <text x="92" y="404">dbt lint</text>
+        <text x="92" y="430">Language server + docs</text>
+        <text x="92" y="456">VS Code extension</text>
+        <text x="92" y="482">Editor autocomplete</text>
+      </g>
+      <g fill="#A3CF7A">
+        <circle cx="358" cy="399" r="3"/>
+        <circle cx="358" cy="425" r="3"/>
+        <circle cx="358" cy="451" r="3"/>
+        <circle cx="358" cy="477" r="3"/>
+      </g>
+
+      <rect x="92" y="508" width="276" height="1" fill="rgba(244,242,236,0.14)"/>
+      <text x="92" y="534" class="sans" font-size="12" fill="rgba(244,242,236,0.75)">Licence</text>
+      <text x="92" y="556" class="sans" font-size="13" font-weight="500" fill="#F4F2EC">Proprietary</text>
+      <text x="92" y="574" class="sans" font-size="11.5" fill="rgba(244,242,236,0.75)">dbt Product Licensing Agreement</text>
+    </g>
+
+    <!-- ============ card 2 : dbt OSS ============ -->
+    <g class="reveal" style="animation-duration:850ms; animation-delay:1500ms">
+      <rect x="474" y="282" width="332" height="330" rx="14" fill="#141A22"/>
+      <rect x="474" y="282" width="332" height="330" rx="14" fill="none" stroke="rgba(244,242,236,0.18)" stroke-width="1.2"/>
+      <rect x="474" y="282" width="4" height="330" rx="2" fill="#5E8A3F" class="sheen"/>
+
+      <text x="502" y="322" class="sans" font-size="26" font-weight="600" fill="#F4F2EC">dbt OSS</text>
+      <rect x="638" y="302" width="104" height="24" rx="12" fill="rgba(94,138,63,0.18)" stroke="#5E8A3F" stroke-width="1"/>
+      <text x="690" y="319" text-anchor="middle" class="mono" font-size="11" fill="#A3CF7A">APACHE 2.0</text>
+
+      <text x="502" y="356" class="sans" font-size="13" fill="rgba(244,242,236,0.75)">Rust engine, no comprehension</text>
+
+      <line x1="502" y1="376" x2="778" y2="376" stroke="rgba(244,242,236,0.14)" stroke-width="1"/>
+
+      <g class="sans" font-size="13.5" fill="rgba(244,242,236,0.5)">
+        <text x="502" y="404">dbt lint</text>
+        <text x="502" y="430">Language server + docs</text>
+        <text x="502" y="456">VS Code extension</text>
+        <text x="502" y="482" fill="#F4F2EC">Rust engine + framework</text>
+      </g>
+      <g stroke="rgba(244,242,236,0.35)" stroke-width="1.4" stroke-linecap="round">
+        <line x1="758" y1="399" x2="768" y2="409"/><line x1="768" y1="399" x2="758" y2="409"/>
+        <line x1="758" y1="425" x2="768" y2="435"/><line x1="768" y1="425" x2="758" y2="435"/>
+        <line x1="758" y1="451" x2="768" y2="461"/><line x1="768" y1="451" x2="758" y2="461"/>
+      </g>
+      <circle cx="763" cy="477" r="3" fill="#A3CF7A"/>
+
+      <rect x="502" y="508" width="276" height="1" fill="rgba(244,242,236,0.14)"/>
+      <text x="502" y="534" class="sans" font-size="12" fill="rgba(244,242,236,0.75)">Licence</text>
+      <text x="502" y="556" class="sans" font-size="13" font-weight="500" fill="#F4F2EC">Apache 2.0</text>
+      <text x="502" y="574" class="mono" font-size="11.5" fill="rgba(244,242,236,0.75)">dbt-oss replaces dbt</text>
+    </g>
+
+    <!-- ============ card 3 : v1 ============ -->
+    <g class="reveal" style="animation-duration:850ms; animation-delay:1650ms">
+      <rect x="884" y="282" width="332" height="330" rx="14" fill="#141A22"/>
+      <rect x="884" y="282" width="332" height="330" rx="14" fill="none" stroke="rgba(244,242,236,0.18)" stroke-width="1.2"/>
+      <rect x="884" y="282" width="4" height="330" rx="2" fill="#5E8A3F" class="sheen"/>
+
+      <text x="912" y="322" class="sans" font-size="26" font-weight="600" fill="#F4F2EC">v1</text>
+      <rect x="960" y="302" width="104" height="24" rx="12" fill="rgba(94,138,63,0.18)" stroke="#5E8A3F" stroke-width="1"/>
+      <text x="1012" y="319" text-anchor="middle" class="mono" font-size="11" fill="#A3CF7A">APACHE 2.0</text>
+
+      <text x="912" y="356" class="sans" font-size="13" fill="rgba(244,242,236,0.75)">Python engine, maintained</text>
+
+      <line x1="912" y1="376" x2="1188" y2="376" stroke="rgba(244,242,236,0.14)" stroke-width="1"/>
+
+      <g class="sans" font-size="13.5" fill="#F4F2EC">
+        <text x="912" y="404">Same SQL, Jinja, YAML</text>
+        <text x="912" y="430">Lenient parser</text>
+        <text x="912" y="456">No lint, no LSP</text>
+        <text x="912" y="482" fill="rgba(244,242,236,0.55)">New features: v2 only</text>
+      </g>
+      <g fill="#A3CF7A">
+        <circle cx="1178" cy="399" r="3"/>
+        <circle cx="1178" cy="425" r="3"/>
+      </g>
+      <g stroke="rgba(244,242,236,0.35)" stroke-width="1.4" stroke-linecap="round">
+        <line x1="1173" y1="451" x2="1183" y2="461"/><line x1="1183" y1="451" x2="1173" y2="461"/>
+      </g>
+      <circle cx="1178" cy="477" r="3.6" fill="none" stroke="#A3CF7A" stroke-width="1.2" class="sheen"/>
+
+      <rect x="912" y="508" width="276" height="1" fill="rgba(244,242,236,0.14)"/>
+      <text x="912" y="534" class="sans" font-size="12" fill="rgba(244,242,236,0.75)">Migration path</text>
+      <text x="912" y="556" class="sans" font-size="13" font-weight="500" fill="#F4F2EC">Side by side</text>
+      <text x="912" y="574" class="sans" font-size="11.5" fill="rgba(244,242,236,0.75)">--use-v2-parser from 1.12</text>
+    </g>
+
+    <!-- ============ footer verdict strip ============ -->
+    <g class="chipIn" style="animation-duration:800ms; animation-delay:2200ms">
+      <rect x="64" y="640" width="1152" height="44" rx="8" fill="#12171E" stroke="rgba(244,242,236,0.12)" stroke-width="1"/>
+      <circle cx="90" cy="662" r="4" fill="#7FAF5A" class="sheen"/>
+      <text x="108" y="667" class="sans" font-size="14" fill="#F4F2EC">New project</text>
+      <text x="212" y="667" class="mono" font-size="12" fill="#A3CF7A">&#8594; v2</text>
+
+      <line x1="340" y1="650" x2="340" y2="674" stroke="rgba(244,242,236,0.16)" stroke-width="1"/>
+
+      <circle cx="366" cy="662" r="4" fill="#5E8A3F" class="sheen"/>
+      <text x="384" y="667" class="sans" font-size="14" fill="#F4F2EC">Strict OSS policy</text>
+      <text x="506" y="667" class="mono" font-size="12" fill="#A3CF7A">&#8594; dbt OSS</text>
+
+      <line x1="628" y1="650" x2="628" y2="674" stroke="rgba(244,242,236,0.16)" stroke-width="1"/>
+
+      <circle cx="654" cy="662" r="4" fill="none" stroke="#A3CF7A" stroke-width="1.2"/>
+      <text x="672" y="667" class="sans" font-size="14" fill="#F4F2EC">Existing project</text>
+      <text x="786" y="667" class="mono" font-size="12" fill="#A3CF7A">&#8594; migrate</text>
+
+      <text x="1188" y="667" text-anchor="end" class="mono" font-size="11" fill="rgba(244,242,236,0.55)">dbt --version</text>
+    </g>
+
+    <!-- slow scanning line, low-key ambient motion -->
+    <g opacity="0.35">
+      <rect class="scan" x="0" y="118" width="2" height="560" fill="#7FAF5A"/>
+    </g>
+  </g>
+
+  <!-- ============ HUD frame (outside camera drift) ============ -->
+  <g fill="none" stroke="rgba(244,242,236,0.22)" stroke-width="1.2">
+    <path d="M24 48 L24 24 L48 24" stroke="#7FAF5A"/>
+    <path d="M1232 48 L1232 24 L1208 24" stroke="#7FAF5A"/>
+    <path d="M24 672 L24 696 L48 696" stroke="#7FAF5A"/>
+    <path d="M1232 672 L1232 696 L1208 696" stroke="#7FAF5A"/>
+  </g>
+</svg>
